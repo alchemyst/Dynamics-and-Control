@@ -14,6 +14,7 @@ V4
 * [First order systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/First order systems.ipynb)
 * [Second order systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Second order systems.ipynb)
 * [Approximation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Approximation.ipynb)
+* [Convolution](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Convolution.ipynb)
 
 V3
 --
@@ -24,3 +25,4 @@ V3
 * [First order systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/First order systems.v3.ipynb)
 * [Second order systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Second order systems.v3.ipynb)
 * [Approximation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Approximation.v3.ipynb)
+* [Convolution](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Convolution.v3.ipynb)
