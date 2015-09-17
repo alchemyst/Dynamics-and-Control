@@ -15,6 +15,7 @@ V4
 * [Second order systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Second order systems.ipynb)
 * [Approximation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Approximation.ipynb)
 * [Convolution](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Convolution.ipynb)
+* [Block diagram simplification](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Block diagram simplification.ipynb)
 
 V3
 --
@@ -26,3 +27,4 @@ V3
 * [Second order systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Second order systems.v3.ipynb)
 * [Approximation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Approximation.v3.ipynb)
 * [Convolution](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Convolution.v3.ipynb)
+* [Block diagram simplification](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Block diagram simplification.v3.ipynb)
