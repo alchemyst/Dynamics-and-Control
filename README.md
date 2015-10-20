@@ -17,6 +17,7 @@ V4
 * [Convolution](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Convolution.ipynb)
 * [Block diagram simplification](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Block diagram simplification.ipynb)
 * [Regression](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Regression.ipynb)
+* [Sound and frequency](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sound and frequency.ipynb)
 
 V3
 --
@@ -30,3 +31,4 @@ V3
 * [Convolution](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Convolution.v3.ipynb)
 * [Block diagram simplification](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Block diagram simplification.v3.ipynb)
 * [Regression](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Regression.v3.ipynb)
+* [Sound and frequency](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sound and frequency.v3.ipynb)
