@@ -18,6 +18,7 @@ V4
 * [Block diagram simplification](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Block diagram simplification.ipynb)
 * [Regression](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Regression.ipynb)
 * [Sound and frequency](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sound and frequency.ipynb)
+* [Fourier series](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Fourier series.ipynb)
 
 V3
 --
@@ -32,3 +33,4 @@ V3
 * [Block diagram simplification](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Block diagram simplification.v3.ipynb)
 * [Regression](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Regression.v3.ipynb)
 * [Sound and frequency](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sound and frequency.v3.ipynb)
+* [Fourier series](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Fourier series.v3.ipynb)
