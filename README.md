@@ -19,6 +19,7 @@ V4
 * [Regression](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Regression.ipynb)
 * [Sound and frequency](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sound and frequency.ipynb)
 * [Fourier series](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Fourier series.ipynb)
+* [Sampled systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sampled systems.ipynb)
 
 V3
 --
@@ -34,3 +35,4 @@ V3
 * [Regression](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Regression.v3.ipynb)
 * [Sound and frequency](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sound and frequency.v3.ipynb)
 * [Fourier series](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Fourier series.v3.ipynb)
+* [Sampled systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sampled systems.v3.ipynb)
