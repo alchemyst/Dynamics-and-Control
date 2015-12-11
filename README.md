@@ -5,7 +5,7 @@ IPython notebooks for dynamics and control
 
 This repository collects notebooks for the subjects CPN321 (Process Dynamics), and CPB421 (Process Control) at the Chemical Engineering department of the University of Pretoria.
 
-These links will allow you to view the notebooks using the notebook viewer:
+The links below will allow you to view the notebooks using the notebook viewer. You can also click on the "Launch Binder" badge above to launche a notebook server which will allow you to run all the code online.
 
 V4
 --
