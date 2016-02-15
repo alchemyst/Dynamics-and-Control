@@ -8,7 +8,11 @@ This repository collects notebooks for the subjects CPN321 (Process Dynamics), a
 The links below will allow you to view the notebooks using the notebook viewer. You can also click on the "Launch Binder" badge above to launche a notebook server which will allow you to run all the code online.
 
 V4
---
+==
+
+Dynamics
+--------
+
 * [Notebook introduction](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Notebook introduction.ipynb)
 * [Linearisation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Linearisation.ipynb)
 * [Standard process inputs](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Standard process inputs.ipynb)
@@ -23,8 +27,16 @@ V4
 * [Fourier series](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Fourier series.ipynb)
 * [Sampled systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sampled systems.ipynb)
 
+Control
+-------
+* [Effect of Proportional Control](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Effect of Proportional Control.ipynb)
+
 V3
---
+==
+
+Dynamics
+--------
+
 * [Notebook introduction](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Notebook introduction.v3.ipynb)
 * [Standard process inputs](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Standard process inputs.v3.ipynb)
 * [Linearisation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Linearisation.v3.ipynb)
@@ -38,3 +50,8 @@ V3
 * [Sound and frequency](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sound and frequency.v3.ipynb)
 * [Fourier series](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Fourier series.v3.ipynb)
 * [Sampled systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sampled systems.v3.ipynb)
+
+Control
+-------
+
+* [Effect of Proportional Control](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Effect of Proportional Control.v3.ipynb)
