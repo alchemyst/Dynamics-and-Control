@@ -30,6 +30,7 @@ Dynamics
 Control
 -------
 * [Effect of Proportional Control](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Effect of Proportional Control.ipynb)
+* [Direct synthesis PID design](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Direct synthesis PID design.ipynb)
 
 V3
 ==
@@ -55,3 +56,4 @@ Control
 -------
 
 * [Effect of Proportional Control](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Effect of Proportional Control.v3.ipynb)
+* [Direct synthesis PID design](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Direct synthesis PID design.ipynb)
