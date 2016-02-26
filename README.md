@@ -12,7 +12,7 @@ V4
 
 Sympy Cheatsheet
 ----------------
-* [Sympy cheatsheet](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sympy cheatsheet.ipynb)
+* [SymPy cheatsheet](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/SymPy cheatsheet.ipynb)
 
 Dynamics
 --------
@@ -39,9 +39,9 @@ Control
 V3
 ==
 
-Sympy Cheatsheet
+SymPy Cheatsheet
 ----------------
-* [Sympy cheatsheet](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sympy cheatsheet.v3.ipynb)
+* [SymPy cheatsheet](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/SymPy cheatsheet.v3.ipynb)
 
 
 Dynamics
