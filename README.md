@@ -10,6 +10,10 @@ The links below will allow you to view the notebooks using the notebook viewer. 
 V4
 ==
 
+Sympy Cheatsheet
+----------------
+* [Sympy cheatsheet](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sympy cheatsheet.ipynb)
+
 Dynamics
 --------
 
@@ -34,6 +38,11 @@ Control
 
 V3
 ==
+
+Sympy Cheatsheet
+----------------
+* [Sympy cheatsheet](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sympy cheatsheet.v3.ipynb)
+
 
 Dynamics
 --------
