@@ -36,6 +36,7 @@ Control
 * [Effect of Proportional Control](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Effect of Proportional Control.ipynb)
 * [Direct synthesis PID design](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Direct synthesis PID design.ipynb)
 * [Simulation of arbitrary transfer functions](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Simulation of arbitrary transfer functions.ipynb)
+* [Frequency domain stability](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Frequency domain stability.ipynb)
 
 V3
 ==
@@ -68,3 +69,4 @@ Control
 * [Effect of Proportional Control](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Effect of Proportional Control.v3.ipynb)
 * [Direct synthesis PID design](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Direct synthesis PID design.ipynb)
 * [Simulation of arbitrary transfer functions](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Simulation of arbitrary transfer functions.v3.ipynb)
+* [Frequency domain stability](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Frequency domain stability.v3.ipynb)
