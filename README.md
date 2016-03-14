@@ -38,6 +38,7 @@ Control
 * [Simulation of arbitrary transfer functions](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Simulation of arbitrary transfer functions.ipynb)
 * [Frequency domain stability](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Frequency domain stability.ipynb)
 * [Hybrid system simulation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Hybrid system simulation.ipynb)
+* [Object-Oriented simulation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Object-Oriented simulation.ipynb)
 
 V3
 ==
@@ -72,3 +73,4 @@ Control
 * [Simulation of arbitrary transfer functions](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Simulation of arbitrary transfer functions.v3.ipynb)
 * [Frequency domain stability](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Frequency domain stability.v3.ipynb)
 * [Hybrid system simulation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Hybrid system simulation.v3.ipynb)
+* [Object-Oriented simulation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Object-Oriented simulation.v3.ipynb)
