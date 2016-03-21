@@ -39,6 +39,7 @@ Control
 * [Frequency domain stability](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Frequency domain stability.ipynb)
 * [Hybrid system simulation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Hybrid system simulation.ipynb)
 * [Object-Oriented simulation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Object-Oriented simulation.ipynb)
+* [Special functions in classes](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Special functions in classes.ipynb)
 
 V3
 ==
@@ -74,3 +75,5 @@ Control
 * [Frequency domain stability](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Frequency domain stability.v3.ipynb)
 * [Hybrid system simulation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Hybrid system simulation.v3.ipynb)
 * [Object-Oriented simulation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Object-Oriented simulation.v3.ipynb)
+* [Special functions in classes](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Special functions in classes.v3.ipynb)
+
