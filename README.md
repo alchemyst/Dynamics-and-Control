@@ -42,6 +42,7 @@ Control
 * [Object-Oriented simulation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Object-Oriented simulation.ipynb)
 * [Special functions in classes](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Special functions in classes.ipynb)
 * [Discrete control](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Discrete control.ipynb)
+* [Object-Oriented simulation - Discrete](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Object-Oriented simulation - Discrete.ipynb)
 
 V3
 ==
@@ -80,4 +81,5 @@ Control
 * [Object-Oriented simulation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Object-Oriented simulation.v3.ipynb)
 * [Special functions in classes](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Special functions in classes.v3.ipynb)
 * [Discrete control](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Discrete control.v3.ipynb)
+* [Object-Oriented simulation - Discrete](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Object-Oriented simulation - Discrete.v3.ipynb)
 
