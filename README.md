@@ -43,6 +43,7 @@ Control
 * [Special functions in classes](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Special functions in classes.ipynb)
 * [Discrete control](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Discrete control.ipynb)
 * [Object-Oriented simulation - Discrete](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Object-Oriented simulation - Discrete.ipynb)
+* [Multivariable closed loop transfer functions](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Multivariable closed loop transfer functions.ipynb)
 
 V3
 ==
@@ -82,4 +83,5 @@ Control
 * [Special functions in classes](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Special functions in classes.v3.ipynb)
 * [Discrete control](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Discrete control.v3.ipynb)
 * [Object-Oriented simulation - Discrete](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Object-Oriented simulation - Discrete.v3.ipynb)
+* [Multivariable closed loop transfer functions](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Multivariable closed loop transfer functions.v3.ipynb)
 
