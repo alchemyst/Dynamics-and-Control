@@ -45,6 +45,7 @@ Control
 * [Object-Oriented simulation - Discrete](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Object-Oriented simulation - Discrete.ipynb)
 * [Multivariable closed loop transfer functions](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Multivariable closed loop transfer functions.ipynb)
 * [Multivariable stability analysis](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Multivariable stability analysis.ipynb)
+* [Multivariable pairing (RGA)](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Multivariable Pairing.ipynb)
 
 V3
 ==
@@ -86,4 +87,5 @@ Control
 * [Object-Oriented simulation - Discrete](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Object-Oriented simulation - Discrete.v3.ipynb)
 * [Multivariable closed loop transfer functions](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Multivariable closed loop transfer functions.v3.ipynb)
 * [Multivariable stability analysis](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Multivariable stability analysis.v3.ipynb)
+* [Multivariable pairing (RGA)](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Multivariable Pairing.v3.ipynb)
 
