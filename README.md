@@ -46,6 +46,7 @@ Control
 * [Multivariable closed loop transfer functions](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Multivariable closed loop transfer functions.ipynb)
 * [Multivariable stability analysis](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Multivariable stability analysis.ipynb)
 * [Multivariable pairing (RGA)](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Multivariable Pairing.ipynb)
+* [Optimal control - minimal integral measures](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Optimal control - minimal integral measures.ipynb)
 
 V3
 ==
@@ -88,4 +89,5 @@ Control
 * [Multivariable closed loop transfer functions](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Multivariable closed loop transfer functions.v3.ipynb)
 * [Multivariable stability analysis](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Multivariable stability analysis.v3.ipynb)
 * [Multivariable pairing (RGA)](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Multivariable Pairing.v3.ipynb)
+* [Optimal control - minimal integral measures](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Optimal control - minimal integral measures.v3.ipynb)
 
