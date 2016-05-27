@@ -48,6 +48,7 @@ Control
 * [Multivariable pairing (RGA)](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Multivariable Pairing.ipynb)
 * [Optimal control - minimal integral measures](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Optimal control - minimal integral measures.ipynb)
 * [Simple MPC](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Simple MPC.ipynb)
+* [Control valve design](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Control valve design.ipynb)
 
 V3
 ==
@@ -92,3 +93,4 @@ Control
 * [Multivariable pairing (RGA)](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Multivariable Pairing.v3.ipynb)
 * [Optimal control - minimal integral measures](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Optimal control - minimal integral measures.v3.ipynb)
 * [Simple MPC](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Simple MPC.v3.ipynb)
+* [Control valve design](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Control valve design.v3.ipynb)
