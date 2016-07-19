@@ -18,6 +18,7 @@ Dynamics
 --------
 
 * [Notebook introduction](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Notebook introduction.ipynb)
+* [Equation solving tools](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Equation solving tools.ipynb)
 * [Linearisation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Linearisation.ipynb)
 * [Standard process inputs](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Standard process inputs.ipynb)
 * [Laplace transforms](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Laplace transforms.ipynb)
@@ -62,6 +63,7 @@ Dynamics
 --------
 
 * [Notebook introduction](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Notebook introduction.v3.ipynb)
+* [Equation solving tools](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Equation solving tools.v3.ipynb)
 * [Standard process inputs](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Standard process inputs.v3.ipynb)
 * [Linearisation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Linearisation.v3.ipynb)
 * [Laplace transforms](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Laplace transforms.v3.ipynb)
