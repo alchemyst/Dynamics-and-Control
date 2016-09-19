@@ -9,6 +9,7 @@ The links below will allow you to view the notebooks using the notebook viewer. 
 
 V4
 ==
+These notebooks are for the current version of the Jupyter Notebook
 
 Sympy Cheatsheet
 ----------------
@@ -19,7 +20,7 @@ Dynamics
 
 * [Notebook introduction](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Notebook introduction.ipynb)
 * [Equation solving tools](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Equation solving tools.ipynb)
-* [Numeric representation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Numeric precision.ipynb)
+* [Numeric representation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Numeric representation.ipynb)
 * [Linearisation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Linearisation.ipynb)
 * [Laplace transforms](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Laplace transforms.ipynb)
 * [Standard process inputs](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Standard process inputs.ipynb)
@@ -54,6 +55,9 @@ Control
 
 V3
 ==
+These versions are automatically converted to the previous version of IPython Notebook.
+Do not rely on these versions, they will be removed soon.
+It is recommended that you upgrade to a recent version of Jupyter Notebook.
 
 SymPy Cheatsheet
 ----------------
@@ -65,7 +69,7 @@ Dynamics
 
 * [Notebook introduction](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Notebook introduction.v3.ipynb)
 * [Equation solving tools](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Equation solving tools.v3.ipynb)
-* [Numeric representation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Numeric precision.v3.ipynb)
+* [Numeric representation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Numeric representation.v3.ipynb)
 * [Linearisation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Linearisation.v3.ipynb)
 * [Laplace transforms](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Laplace transforms.v3.ipynb)
 * [Standard process inputs](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Standard process inputs.v3.ipynb)
