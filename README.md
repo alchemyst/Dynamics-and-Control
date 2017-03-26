@@ -9,7 +9,7 @@ The links below will allow you to view the notebooks using the notebook viewer. 
 
 Sympy Cheatsheet
 ----------------
-* [SymPy cheatsheet](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/SymPy cheatsheet.ipynb)
+* [SymPy cheatsheet](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/SymPy%20cheatsheet.ipynb)
 
 Dynamics
 --------
