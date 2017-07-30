@@ -16,6 +16,7 @@ Dynamics
 
 * [Notebook introduction](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Notebook%20introduction.ipynb)
 * [Equation solving tools](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Equation%20solving%20tools.ipynb)
+* [Nonlinear CSTR example](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Nonlinaer%20CSTR.ipynb)
 * [Numeric representation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Numeric%20representation.ipynb)
 * [Linearisation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Linearisation.ipynb)
 * [Laplace transforms](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Laplace%20transforms.ipynb)
