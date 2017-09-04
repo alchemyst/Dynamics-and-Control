@@ -43,7 +43,7 @@ Control
 * [Object-Oriented simulation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Object-Oriented%20simulation.ipynb)
 * [Special functions in classes](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Special%20functions%20in%20classes.ipynb)
 * [Discrete control](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Discrete%20control.ipynb)
-* [Dahlin controller](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Dahlin%20controller.v3.ipynb)
+* [Dahlin controller](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Dahlin%20controller.ipynb)
 * [Object-Oriented simulation - Discrete](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Object-Oriented%20simulation%20-%20Discrete.ipynb)
 * [Multivariable closed loop transfer functions](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Multivariable%20closed%20loop%20transfer%20functions.ipynb)
 * [Multivariable stability analysis](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Multivariable%20stability%20analysis.ipynb)
