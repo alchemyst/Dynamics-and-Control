@@ -23,6 +23,7 @@ Dynamics
 * [Standard process inputs](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Standard%20process%20inputs.ipynb)
 * [First order systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/First%20order%20systems.ipynb)
 * [Second order systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Second%20order%20systems.ipynb)
+* [Visualising complex functions](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Visualising%20complex%20functions.ipynb)
 * [Approximation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Approximation.ipynb)
 * [Convolution](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Convolution.ipynb)
 * [Simulation of arbitrary transfer functions](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Simulation%20of%20arbitrary%20transfer%20functions.ipynb)
