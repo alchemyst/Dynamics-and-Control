@@ -26,6 +26,7 @@ Dynamics
 * [Visualising complex functions](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Visualising%20complex%20functions.ipynb)
 * [Approximation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Approximation.ipynb)
 * [Convolution](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Convolution.ipynb)
+* [State space](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/State%20space.ipynb)
 * [Simulation of arbitrary transfer functions](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Simulation%20of%20arbitrary%20transfer%20functions.ipynb)
 * [Block diagram simplification](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Block%20diagram%20simplification.ipynb)
 * [Regression](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Regression.ipynb)
