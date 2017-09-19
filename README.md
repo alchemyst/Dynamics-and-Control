@@ -1,5 +1,4 @@
-IPython notebooks for dynamics and control
-==========================================
+# Jupyter notebooks for dynamics and control
 
 [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/alchemyst/Dynamics-and-Control)
 
@@ -7,31 +6,39 @@ This repository collects notebooks for the subjects CPN321 (Process Dynamics), a
 
 The links below will allow you to view the notebooks using the notebook viewer. You can also click on the "Launch Binder" badge above to launch a notebook server which will allow you to run all the code online.
 
-Sympy Cheatsheet
-----------------
+## Sympy Cheatsheet
 * [SymPy cheatsheet](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/SymPy%20cheatsheet.ipynb)
 
-Dynamics
---------
-
+## Dynamics
+### Time domain simulation
 * [Notebook introduction](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Notebook%20introduction.ipynb)
 * [Equation solving tools](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Equation%20solving%20tools.ipynb)
 * [Nonlinear CSTR example](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Nonlinear%20CSTR.ipynb)
 * [Numeric representation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Numeric%20representation.ipynb)
+* [Read input from file](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Read%20input%20from%20file.ipynb)
+
+### Linear systems
 * [Linearisation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Linearisation.ipynb)
 * [Laplace transforms](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Laplace%20transforms.ipynb)
 * [Standard process inputs](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Standard%20process%20inputs.ipynb)
 * [First order systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/First%20order%20systems.ipynb)
 * [Second order systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Second%20order%20systems.ipynb)
 * [Visualising complex functions](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Visualising%20complex%20functions.ipynb)
+* [Random response generator][http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Random%20response%20generator.ipynb)
 * [Approximation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Approximation.ipynb)
 * [Convolution](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Convolution.ipynb)
 * [State space](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/State%20space.ipynb)
 * [Simulation of arbitrary transfer functions](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Simulation%20of%20arbitrary%20transfer%20functions.ipynb)
 * [Block diagram simplification](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Block%20diagram%20simplification.ipynb)
+
+### System identification
 * [Regression](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Regression.ipynb)
+
+### Frequency doman
 * [Sound and frequency](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sound%20and%20frequency.ipynb)
 * [Fourier series](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Fourier%20series.ipynb)
+
+### Sampled systems
 * [Sampled systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sampled%20systems.ipynb)
 
 Control
