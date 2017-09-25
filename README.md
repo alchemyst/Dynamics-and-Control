@@ -24,7 +24,7 @@ The links below will allow you to view the notebooks using the notebook viewer. 
 * [First order systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/First%20order%20systems.ipynb)
 * [Second order systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Second%20order%20systems.ipynb)
 * [Visualising complex functions](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Visualising%20complex%20functions.ipynb)
-* [Random response generator][http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Random%20response%20generator.ipynb)
+* [Random response generator](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Random%20response%20generator.ipynb)
 * [Approximation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Approximation.ipynb)
 * [Convolution](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Convolution.ipynb)
 * [State space](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/State%20space.ipynb)
