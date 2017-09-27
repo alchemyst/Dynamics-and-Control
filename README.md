@@ -35,6 +35,7 @@ The links below will allow you to view the notebooks using the notebook viewer. 
 * [Regression](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Regression.ipynb)
 * [Dynamic model parameter estimation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Dynamic%20model%20parameter%20estimation.ipynb)
 * [Neural networks](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Neural%20networks.ipynb)
+* [Identifying discrete-time models](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Identifying%20discrete-time%20models.ipynb)
 
 ### Frequency doman
 * [Sound and frequency](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sound%20and%20frequency.ipynb)
