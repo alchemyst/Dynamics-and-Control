@@ -23,6 +23,7 @@ The links below will allow you to view the notebooks using the notebook viewer. 
 * [Standard process inputs](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Standard%20process%20inputs.ipynb)
 * [First order systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/First%20order%20systems.ipynb)
 * [Second order systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Second%20order%20systems.ipynb)
+* [Sinusoidal response](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sinusoidal%20response.ipynb)
 * [Visualising complex functions](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Visualising%20complex%20functions.ipynb)
 * [Random response generator](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Random%20response%20generator.ipynb)
 * [Approximation](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Approximation.ipynb)
