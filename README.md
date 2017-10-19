@@ -39,8 +39,9 @@ The links below will allow you to view the notebooks using the notebook viewer. 
 * [Identifying discrete-time models](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Identifying%20discrete-time%20models.ipynb)
 
 ### Frequency doman
-* [Sound and frequency](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sound%20and%20frequency.ipynb)
 * [Fourier series](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Fourier%20series.ipynb)
+* [Sound and frequency](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sound%20and%20frequency.ipynb)
+* [Frequency domain plots](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Frequency%20response%20plots.ipynb)
 
 ### Sampled systems
 * [Sampled systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sampled%20systems.ipynb)
