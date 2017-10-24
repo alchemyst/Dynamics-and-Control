@@ -42,6 +42,7 @@ The links below will allow you to view the notebooks using the notebook viewer. 
 * [Fourier series](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Fourier%20series.ipynb)
 * [Sound and frequency](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sound%20and%20frequency.ipynb)
 * [Frequency domain plots](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Frequency%20response%20plots.ipynb)
+* [Asymptotic Bode diagrams](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Asymptotic%20Bode%20diagrams.ipynb)
 
 ### Sampled systems
 * [Sampled systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sampled%20systems.ipynb)
