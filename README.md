@@ -45,7 +45,8 @@ The links below will allow you to view the notebooks using the notebook viewer. 
 * [Asymptotic Bode diagrams](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Asymptotic%20Bode%20diagrams.ipynb)
 
 ### Sampled systems
-* [Sampled systems](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Sampled%20systems.ipynb)
+* [Aliasing](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/Aliasing.ipynb)
+* [The z transform](http://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/The%20z%20transform.ipynb)
 
 Control
 -------
