@@ -1,0 +1,10 @@
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - matplotlib
+  - numpy
+  - ipywidgets
+  - sympy
+  - control
+  - scipy==0.19.1
