@@ -8,3 +8,4 @@ dependencies:
   - sympy
   - control
   - scipy==0.19.1
+  - pandas
