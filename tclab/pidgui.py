@@ -2,7 +2,6 @@ from ipywidgets import Button, Label, FloatSlider, HBox, VBox, Checkbox, IntText
 import tornado
 from tclab import Plotter, Historian, TCLab, TCLabModel
 from tclab.gui import actionbutton, labelledvalue, slider, NotebookInteraction
-from tclab.clock import setnow, time
 
 import matplotlib.pyplot as plt
 
