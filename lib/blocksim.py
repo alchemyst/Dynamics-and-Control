@@ -12,27 +12,25 @@ class Block:
     def __repr__(self):
         return f"{self.__class__.__name__}: {self.inputname} →[ {self.name} ]→ {self.outputname}"
 
+    
 class LTI(Block):
     def __init__(self, name, inputname, outputname, numerator, denominator=1, delay=0):
         super().__init__(name, inputname, outputname)
-        
-        self.delay = delay
         
         self.G = scipy.signal.lti(numerator, denominator)
         self.Gss = self.G.to_ss()
         self.change_state(numpy.zeros((self.Gss.A.shape[0], 1)))
         self.y = self.output = 0
-        self.ts = [0]
-        self.us = [0]
-        
+        if delay > 0:
+            self.delay = Deadtime(None, None, None, delay)
+        else:
+            self.delay = None
+                
     def change_input(self, t, u):
-        self.ts.append(t)
-        self.us.append(u)
-        if self.delay > 0:
-            u = numpy.interp(t - self.delay, self.ts, self.us)
-            
-        self.y = self.Gss.C.dot(self.x) + self.Gss.D.dot(u)
-        self.output = self.y[0, 0]
+        self.y = (self.Gss.C.dot(self.x) + self.Gss.D.dot(u))[0, 0]
+        if self.delay: 
+            self.y = self.delay.change_input(t, self.y)
+        self.output = self.y
         return self.output
     
     def change_state(self, x):
@@ -46,7 +44,61 @@ class PI(LTI):
     def __init__(self, name, inputname, outputname, Kc, tau_i):
         super().__init__(name, inputname, outputname, [Kc*tau_i, Kc], [tau_i, 0])
         
+    
+class AE(Block):
+    def __init__(self, name, inputname, outputname, f, delay=0):
+        super().__init__(name, inputname, outputname)
+        self.f = f # y = f(t, u)
+        
+        self.change_state(0)
+        self.y = self.output = 0
+        if delay > 0:
+            self.delay = Deadtime(None, None, None, delay)
+        else:
+            self.delay = None
+        
+    def change_input(self, t, u):          
+        self.y = self.f(t, u)
+        if self.delay: 
+            self.y = self.delay.change_input(t, self.y)
+        self.output = self.y
+        return self.output
+    
+    def change_state(self, x):
+        self.x = self.state = x
+    
+    def derivative(self, e):
+        return 0
+    
 
+class Deadtime(Block):
+    def __init__(self, name, inputname, outputname, delay):
+        super().__init__(name, inputname, outputname)
+        
+        self.delay = delay
+        
+        self.change_state(0)
+        self.y = self.output = 0
+        self.ts = [0]
+        self.us = [0]
+        
+    def change_input(self, t, u):
+        self.ts.append(t)
+        self.us.append(u)
+        if self.delay > 0:
+            u = numpy.interp(t - self.delay, self.ts, self.us)
+            
+        self.y = u
+        self.output = self.y
+        return self.output
+    
+    def change_state(self, x):
+        self.x = self.state = x
+    
+    def derivative(self, e):
+        return 0
+    
+    
 class Diagram:
     def __init__(self, blocks, sums, inputs):
         self.blocks = blocks
