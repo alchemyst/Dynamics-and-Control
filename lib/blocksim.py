@@ -54,11 +54,15 @@ class Zero(Block):
     def __init__(self, name, inputname, outputname):
         super().__init__(name, inputname, outputname)
 
+    def reset(self):
+        self.change_state(0)
+        pass
+
     def change_input(self, t, u):
         return 0
 
     def change_state(self, x):
-        pass
+        self.x = self.state = 0
 
     def derivative(self, e):
         return 0
