@@ -50,6 +50,20 @@ class PI(LTI):
         super().__init__(name, inputname, outputname, [Kc*tau_i, Kc], [tau_i, 0])
 
 
+class Zero(Block):
+    def __init__(self, name, inputname, outputname):
+        super().__init__(name, inputname, outputname)
+
+    def change_input(self, t, u):
+        return 0
+
+    def change_state(self, x):
+        pass
+
+    def derivative(self, e):
+        return 0
+
+
 class AE(Block):
     def __init__(self, name, inputname, outputname, f, delay=0):
         super().__init__(name, inputname, outputname)
