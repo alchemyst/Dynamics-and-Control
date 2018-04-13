@@ -28,22 +28,21 @@ def f4(K, tau, theta, A, B):
     return tau_I
 
 # dictionary to allow lookup of the coefficients and the relation to use
-table = {'Disturbance': {'PI': {'P': {'A': 0.859, 'B': -0.977, 'relation': f1},
-                                'I': {'A': 0.674, 'B': -0.68, 'relation': f2}},
-                         'PID': {'P': {'A': 1.357, 'B': -0.947, 'relation': f1},
-                                 'I': {'A': 0.842, 'B': -0.738, 'relation': f2},
-                                 'D': {'A': 0.381, 'B': 0.995, 'relation': f3}}},
-         'Set point': {'PI': {'P': {'A': 0.586, 'B': -0.916, 'relation': f1},
-                              'I': {'A': 1.03, 'B': -0.165, 'relation': f4}},
-                       'PID': {'P': {'A': 0.965, 'B': -0.85, 'relation': f1},
-                               'I': {'A': 0.796, 'B': -0.1465, 'relation': f4},
-                               'D': {'A': 0.308, 'B': 0.929, 'relation': f3}}}}
+table = {'Disturbance': {'PI': {'P': (0.859, -0.977, f1),
+                                'I': (0.674, -0.68, f2)},
+                         'PID': {'P': (1.357, -0.947, f1),
+                                 'I': (0.842, -0.738, f2),
+                                 'D': (0.381, 0.995, f3)}},
+         'Set point': {'PI': {'P': (0.586, -0.916, f1),
+                              'I': (1.03, -0.165, f4)},
+                       'PID': {'P': (0.965, -0.85, f1),
+                               'I': (0.796, -0.1465, f4),
+                               'D': (0.308, 0.929, f3)}}}
 
 def parameters(K, tau, theta, type_of_input='Disturbance', type_of_controller='PI'):
     retval = []
     for mode in type_of_controller:
-        entry = table[type_of_input][type_of_controller][mode]
-        f = entry['relation']
-        value = f(K, tau, theta, entry['A'], entry['B'])
+        A, B, f = table[type_of_input][type_of_controller][mode]
+        value = f(K, tau, theta, A, B)
         retval.append(value)
     return retval
