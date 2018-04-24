@@ -168,6 +168,7 @@ latex_documents = [
      'Carl Sandrock', 'manual'),
 ]
 
+latex_engine = "xelatex"
 
 # -- Options for manual page output ---------------------------------------
 
