@@ -48,6 +48,7 @@ Biochemical Engineering
    2_Control/6_Discrete_control_and_analysis/Discrete control.ipynb
    2_Control/6_Discrete_control_and_analysis/Discrete PI.ipynb
    2_Control/6_Discrete_control_and_analysis/Dahlin controller.ipynb
+   2_Control/6_Discrete_control_and_analysis/Noise models.ipynb
    2_Control/7_Multivariable_control/Multivariable closed loop transfer functions.ipynb
    2_Control/7_Multivariable_control/Multivariable stability analysis.ipynb
    2_Control/7_Multivariable_control/Multivariable Pairing.ipynb
