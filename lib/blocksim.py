@@ -177,9 +177,8 @@ class DiscreteTF(Block):
             u_sum = numpy.inner(self.u_cos, self.us)
             y_sum = numpy.inner(self.y_cos[:-1], self.ys[:-1])
             y = (u_sum - y_sum)/self.y_cos[-1]
-            
-            self.ys = numpy.append(self.ys[:-1], y) 
-            self.output = self.ys[-1]
+
+            self.output = self.ys[-1] = y
         return self.output
     
     def change_state(self, x):
