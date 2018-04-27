@@ -136,6 +136,8 @@ class DiscreteTF(Block):
         
         Parameters
         ----------
+        dt : float
+            The sampling time of the transfer function.
         numerator : array_like
             The numerator coefficient vector in a 1-D sequence.
             [b_N, ..., b_0]
