@@ -127,6 +127,69 @@ class Deadtime(Block):
     def derivative(self, e):
         return 0
 
+class DiscreteTF(Block):
+    
+    def __init__(self, name, input_name, output_name, dt, numerator, denominator):
+        """
+        Simulates a discrete transfer function.        
+        The TF must be of the form: (b_N * z**(-N) + ... + b_0)/(a_M z**(-M) + ... + a_0 ).
+        
+        Parameters
+        ----------
+        dt : float
+            The sampling time of the transfer function.
+        numerator : array_like
+            The numerator coefficient vector in a 1-D sequence.
+            [b_N, ..., b_0]
+        denominator : array_like
+            The denominator coefficient vector in a 1-D sequence.
+            [a_N, ..., a_0]; a_0 != 0
+
+        """
+        super().__init__(name, input_name, output_name)
+        
+        self.dt = dt
+        self.y_cos = denominator
+        self.u_cos = numerator
+        
+        self.ys = numpy.zeros(len(self.y_cos))
+        self.us = numpy.zeros(len(self.u_cos))
+        self.next_sample = 0
+        
+        self.state = 0.0
+        self.output = 0.0
+    
+    def reset(self):
+        self.ys = numpy.zeros(len(self.y_cos))
+        self.us = numpy.zeros(len(self.u_cos))
+        self.next_sample = 0
+        self.state = 0.0
+        self.output = 0.0
+    
+    def change_input(self, t, u):
+        if t > self.next_sample:
+            self.next_sample += self.dt
+            
+            self.us[:-1] = self.us[1:]
+            self.us[-1] = u
+            
+            self.ys[:-1] = self.ys[1:]
+            self.ys[-1] = None # done to ensure that if anything should go wrong, it does  
+            
+            u_sum = numpy.inner(self.u_cos, self.us)
+            y_sum = numpy.inner(self.y_cos[:-1], self.ys[:-1])
+            y = (u_sum - y_sum)/self.y_cos[-1]
+
+            self.output = self.ys[-1] = y
+        return self.output
+    
+    def change_state(self, x):
+        return 0
+    
+    def derivative(self, e):
+        return 0
+    
+
 
 class Diagram:
     def __init__(self, blocks, sums, inputs):
