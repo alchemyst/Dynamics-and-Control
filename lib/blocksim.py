@@ -168,9 +168,11 @@ class DiscreteTF(Block):
         if t > self.next_sample:
             self.next_sample += self.dt
             
-            self.us = numpy.append(self.us[1:], u)
+            self.us[:-1] = self.us[1:]
+            self.us[-1] = u
             
-            self.ys = numpy.append(self.ys[1:], None)  # done to ensure that if anything should go wrong, it does
+            self.ys[:-1] = self.ys[1:]
+            self.ys[-1] = None # done to ensure that if anything should go wrong, it does  
             
             u_sum = numpy.inner(self.u_cos, self.us)
             y_sum = numpy.inner(self.y_cos[:-1], self.ys[:-1])
