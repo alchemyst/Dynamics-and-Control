@@ -127,6 +127,59 @@ class Deadtime(Block):
     def derivative(self, e):
         return 0
 
+class DiscreteTF(blocksim.Block):
+    
+    def __init__(self, name, input_name, output_name, dt, numerator, denominator):
+        """
+        The TF must be of the form: \frac{a_N z^{-N} + ... + a_0 }{b_M z^{-M} + ... + b_0 }.
+        
+        numerator - [a_N, ..., a_0]; a_0 != 0
+        denominator - [b_N, ..., b_0]
+        """
+        super().__init__(name, input_name, output_name)
+        
+        self.dt = dt
+        self.y_cos = denominator
+        self.u_cos = numerator
+        
+        self.ys = [0]*len(self.y_cos)
+        self.us = [0]*len(self.u_cos)
+        self.next_sample = 0
+        
+        self.state = 0.0
+        self.output = 0.0
+    
+    def reset(self):
+        self.ys = [0]*len(self.y_cos)
+        self.us = [0]*len(self.u_cos)
+        self.next_sample = 0
+    
+    def change_input(self, t, u):
+        if t > self.next_sample:
+            self.next_sample += self.dt
+            
+            self.us.pop(0)
+            self.us.append(u)
+            
+            self.ys.pop(0)
+            self.ys.append(None)  # done to ensure that if anything should go wrong, it does
+            
+            u_sum = sum([b*u_i for b, u_i in zip(self.u_cos, self.us)])
+            y_sum = sum([a*y_i for a, y_i in zip(self.y_cos[:-1], self.ys[:-1])])
+            y = (u_sum - y_sum)/self.y_cos[-1]
+            
+            self.ys.pop()
+            self.ys.append(y) 
+            self.output = self.ys[-1]
+        return self.output
+    
+    def change_state(self, x):
+        return 0
+    
+    def derivative(self, e):
+        return 0
+    
+
 
 class Diagram:
     def __init__(self, blocks, sums, inputs):
