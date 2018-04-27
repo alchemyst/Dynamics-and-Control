@@ -161,6 +161,8 @@ class DiscreteTF(blocksim.Block):
         self.ys = [0]*len(self.y_cos)
         self.us = [0]*len(self.u_cos)
         self.next_sample = 0
+        self.state = 0.0
+        self.output = 0.0
     
     def change_input(self, t, u):
         if t > self.next_sample:
