@@ -150,16 +150,16 @@ class DiscreteTF(blocksim.Block):
         self.y_cos = denominator
         self.u_cos = numerator
         
-        self.ys = [0]*len(self.y_cos)
-        self.us = [0]*len(self.u_cos)
+        self.ys = numpy.zeros(len(self.y_cos))
+        self.us = numpy.zeros(len(self.u_cos))
         self.next_sample = 0
         
         self.state = 0.0
         self.output = 0.0
     
     def reset(self):
-        self.ys = [0]*len(self.y_cos)
-        self.us = [0]*len(self.u_cos)
+        self.ys = numpy.zeros(len(self.y_cos))
+        self.us = numpy.zeros(len(self.u_cos))
         self.next_sample = 0
         self.state = 0.0
         self.output = 0.0
@@ -168,18 +168,15 @@ class DiscreteTF(blocksim.Block):
         if t > self.next_sample:
             self.next_sample += self.dt
             
-            self.us.pop(0)
-            self.us.append(u)
+            self.us = numpy.append(self.us[1:], u)
             
-            self.ys.pop(0)
-            self.ys.append(None)  # done to ensure that if anything should go wrong, it does
+            self.ys = numpy.append(self.ys[1:], None)  # done to ensure that if anything should go wrong, it does
             
-            u_sum = sum([b*u_i for b, u_i in zip(self.u_cos, self.us)])
-            y_sum = sum([a*y_i for a, y_i in zip(self.y_cos[:-1], self.ys[:-1])])
+            u_sum = numpy.inner(self.u_cos, self.us)
+            y_sum = numpy.inner(self.y_cos[:-1], self.ys[:-1])
             y = (u_sum - y_sum)/self.y_cos[-1]
             
-            self.ys.pop()
-            self.ys.append(y) 
+            self.ys = numpy.append(self.ys[:-1], y) 
             self.output = self.ys[-1]
         return self.output
     
