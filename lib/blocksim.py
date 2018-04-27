@@ -131,10 +131,18 @@ class DiscreteTF(blocksim.Block):
     
     def __init__(self, name, input_name, output_name, dt, numerator, denominator):
         """
-        The TF must be of the form: \frac{a_N z^{-N} + ... + a_0 }{b_M z^{-M} + ... + b_0 }.
+        Simulates a discrete transfer function.        
+        The TF must be of the form: \frac{b_N z^{-N} + ... + b_0 }{a_M z^{-M} + ... + a_0 }.
         
-        numerator - [a_N, ..., a_0]; a_0 != 0
-        denominator - [b_N, ..., b_0]
+        Parameters
+        ----------
+        numerator : array_like
+            The numerator coefficient vector in a 1-D sequence.
+            [b_N, ..., b_0]
+        denominator : array_like
+            The denominator coefficient vector in a 1-D sequence.
+            [a_N, ..., a_0]; a_0 != 0
+
         """
         super().__init__(name, input_name, output_name)
         
