@@ -132,7 +132,7 @@ class DiscreteTF(Block):
     def __init__(self, name, input_name, output_name, dt, numerator, denominator):
         """
         Simulates a discrete transfer function.        
-        The TF must be of the form: \frac{b_N z^{-N} + ... + b_0 }{a_M z^{-M} + ... + a_0 }.
+        The TF must be of the form: (b_N * z**(-N) + ... + b_0)/(a_M z**(-M) + ... + a_0 ).
         
         Parameters
         ----------
