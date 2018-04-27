@@ -127,7 +127,7 @@ class Deadtime(Block):
     def derivative(self, e):
         return 0
 
-class DiscreteTF(blocksim.Block):
+class DiscreteTF(Block):
     
     def __init__(self, name, input_name, output_name, dt, numerator, denominator):
         """
