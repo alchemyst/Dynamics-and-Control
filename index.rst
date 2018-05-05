@@ -24,6 +24,7 @@ Biochemical Engineering
    1_Dynamics/5_Complex_system_dynamics/Random response generator.ipynb
    1_Dynamics/5_Complex_system_dynamics/Simulation of arbitrary transfer functions.ipynb
    1_Dynamics/5_Complex_system_dynamics/Block diagram simplification.ipynb
+   1_Dynamics/6_Multivariable_system_representation/Transfer function matrices.ipynb
    1_Dynamics/6_Multivariable_system_representation/State space.ipynb
    1_Dynamics/7_System_identification/Regression.ipynb
    1_Dynamics/7_System_identification/Dynamic model parameter estimation.ipynb
