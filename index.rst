@@ -1,5 +1,5 @@
-Biochemical Engineering
-===================
+Dynamics and control
+====================
 
 .. toctree::
    :maxdepth: 2
@@ -38,7 +38,6 @@ Biochemical Engineering
    1_Dynamics/9_Sampled_systems/The z transform.ipynb
    2_Control/1_Conventional_feedback_control/PID controller step responses.ipynb
    2_Control/1_Conventional_feedback_control/Effect of Proportional Control.ipynb
-   tclab/TCLab PID.ipynb
    2_Control/2_Laplace_domain_analysis_of_control_systems/Stability analysis.ipynb
    2_Control/2_Laplace_domain_analysis_of_control_systems/SymPy Routh Array.ipynb
    2_Control/3_PID_controller_design_tuning_and_troubleshooting/Direct synthesis PID design.ipynb
