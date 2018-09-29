@@ -65,7 +65,7 @@ sortedfunctions = list(all_functions)
 sortedfunctions.sort()
 
 def announce(func):
-    links = ", ".join([link(f) for f in function_index[func]])
+    links = ", ".join(link(f) for f in sorted(function_index[func]))
     print(f'* `{func}`: {links}')
 
 for prefix in known_prefixes:
