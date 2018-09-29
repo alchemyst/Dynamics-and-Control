@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-
-
 import pathlib
 import urllib
-import sys
 
-for f in sys.argv[1:]:
+def link(f):
     p = pathlib.Path(f)
-    print(f"[{p.stem.replace('_', ' ')}]({urllib.parse.quote(f)})")
+    return f"[{p.stem.replace('_', ' ')}]({urllib.parse.quote(f)})"
+
+if __name__ == "__main__":
+    import sys
+    for f in sys.argv[1:]:
+        print(link(f))

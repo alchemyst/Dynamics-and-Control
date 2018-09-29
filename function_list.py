@@ -3,6 +3,7 @@ import ast
 import sys
 import nbformat
 import collections
+from link import link
 
 def validline(line):
     return not (line.startswith('%')
@@ -31,6 +32,7 @@ class FunctionFinder(ast.NodeVisitor):
             pass
 
 function_index = collections.defaultdict(set)
+all_functions = set()
 
 for f in sys.argv[1:]:
     finder = FunctionFinder()
@@ -43,9 +45,38 @@ for f in sys.argv[1:]:
             try:
                 parsed = ast.parse(block)
             except:
-                print(f"Parse failed in {f} on this block:")
-                print(block)
+                # print(f"Parse failed in {f} on this block:")
+                # print(block)
                 continue
 
             finder.visit(parsed)
-            function_index[f].update(finder.functions)
+            for func in finder.functions:
+                function_index[func].add(f)
+            all_functions.update(finder.functions)
+
+known_prefixes = ['numpy', 'scipy',
+                  'sympy', 'mpmath', 'pandas',
+                  'plt',
+                  'control',
+                  # 'tclab',
+                  ]
+
+sortedfunctions = list(all_functions)
+sortedfunctions.sort()
+
+def announce(func):
+    links = ", ".join([link(f) for f in function_index[func]])
+    print(f'* `{func}`: {links}')
+
+for prefix in known_prefixes:
+    print(f"# {prefix}")
+    print()
+    for func in sortedfunctions:
+        if func.startswith(prefix + '.'):
+            announce(func)
+            all_functions.remove(func)
+    print()
+
+print('# Other')
+for func in sorted(all_functions):
+    announce(func)
