@@ -1,4 +1,4 @@
-name: skogestad
+name: dynamicscontrol
 channels:
   - conda-forge
   - defaults
