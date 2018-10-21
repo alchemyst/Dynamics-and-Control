@@ -29,17 +29,9 @@ before_install:
 # Install packages
 install:
   - conda env create --file environment.yml python=$TRAVIS_PYTHON_VERSION
-  - source activate skogestad
-  - pip install codeclimate-test-reporter
+  - conda activate dynamicscontrol
   - conda env export  # debugging
-# TODO: Package
-#  - python setup.py install
 
 # Run test
 script:
-  - coverage run runall.py
-  - coverage run -a utils.py
-
-after_success:
-  - coveralls --config_file .coveragerc
-  - CODECLIMATE_REPO_TOKEN=9170a5d7f8682e88b426fd95c2dcaed34f8f27fcf3b3c0bf6515a3e4b49694c9 codeclimate-test-reporter
+  - pytest --verbose --durations=5 test.py
