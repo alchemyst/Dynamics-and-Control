@@ -1,0 +1,45 @@
+# originally from https://gist.github.com/dan-blanchard/7045057
+sudo: false
+language: python
+
+python:
+  - "3.5"
+  - "3.6"
+
+cache:
+  apt: true
+  directories:
+    - $HOME/.local
+
+# Setup anaconda
+before_install:
+  # Fake X environment (see http://docs.travis-ci.com/user/gui-and-headless-browsers/)
+  # - export DISPLAY=:99.0
+  # - sh -e /etc/init.d/xvfb start
+  # Install miniconda
+  # This comes from http://conda.pydata.org/docs/travis.html
+  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  - conda info -a
+
+# Install packages
+install:
+  - conda env create --file environment.yml python=$TRAVIS_PYTHON_VERSION
+  - source activate skogestad
+  - pip install codeclimate-test-reporter
+  - conda env export  # debugging
+# TODO: Package
+#  - python setup.py install
+
+# Run test
+script:
+  - coverage run runall.py
+  - coverage run -a utils.py
+
+after_success:
+  - coveralls --config_file .coveragerc
+  - CODECLIMATE_REPO_TOKEN=9170a5d7f8682e88b426fd95c2dcaed34f8f27fcf3b3c0bf6515a3e4b49694c9 codeclimate-test-reporter
