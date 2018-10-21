@@ -1,3 +1,4 @@
+name: skogestad
 channels:
   - conda-forge
   - defaults
