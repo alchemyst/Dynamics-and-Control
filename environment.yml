@@ -8,7 +8,7 @@ dependencies:
   - numpy==1.14.3
   - scipy==1.1.0
   - sympy==1.1.1
-  - slycot
+#  - slycot
   - control==0.8.0
   - pandas=0.23.0
   - keras=2.2.4
