@@ -1,7 +1,13 @@
+"""Control functions which operate symbolically using sympy"""
+
 import sympy
 
 def routh(p):
-    """ Construct the Routh-Hurwitz array given a polynomial in s"""
+    """ Construct the Routh-Hurwitz array given a polynomial in s
+
+    Input: p - a sympy.Poly object
+    Output: The Routh-Hurwitz array as a sympy.Matrix object
+    """
     coefficients = p.all_coeffs()
     N = len(coefficients)
     M = sympy.zeros(N, (N+1)//2 + 1)
