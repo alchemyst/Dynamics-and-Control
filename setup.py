@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="tbcontrol-alchemyst",
-    version="0.0.1",
+    name="tbcontrol",
+    version="0.0.2",
     author="Carl Sandrock",
     author_email="carl.sandrock@gmail.com",
     description="Textbook Control Problem package",
