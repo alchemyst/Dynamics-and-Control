@@ -29,6 +29,7 @@ install:
   # NOTE: we're not actually installing this version of Python here due to the environment.
   - conda env create --file environment.yml # python=$TRAVIS_PYTHON_VERSION
   - source activate dynamicscontrol
+  - pip install .
   - conda env export  # debugging
 
 # Run test
