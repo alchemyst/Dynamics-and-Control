@@ -1,6 +1,8 @@
-# Jupyter notebooks for dynamics and control
+# A Python library for solving textbook control problems
 
-This repository collects notebooks for the subjects CPN321 (Process Dynamics), and CPB421 (Process Control) at the Chemical Engineering department of the University of Pretoria.
+The tbcontrol package collects functions useful to solve the kinds of problems encountered in undergraduate process control textbooks. It is the distributable part of a larger project to develop Jupyter notebooks for dynamics and control.
+
+The [repository](https://github.com/alchemyst/Dynamics-and-Control) collects notebooks for the subjects CPN321 (Process Dynamics), and CPB421 (Process Control) at the Chemical Engineering department of the University of Pretoria.
 
 You can experiment with the notebooks without installing anything using this link: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/alchemyst/Dynamics-and-Control)
 
