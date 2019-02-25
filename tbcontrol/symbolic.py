@@ -21,3 +21,18 @@ def routh(p):
             S = M[[i-2, i-1], [0, j+1]]
             M[i, j] = sympy.simplify(-S.det()/M[i-1,0])
     return M[:, :-1]
+
+
+def pade(G, s, M, N, p=0):
+    """Return a Padé approximation of the function G in terms of variable s, of order M/N around point p"""
+    M += 1
+    N += 1
+    b = sympy.symbols('b:{}'.format(M))
+    a = sympy.symbols('a:{}'.format(N))
+    approximation = sum(b[i]*s**i for i in range(M))/sum(a[i]*s**i for i in range(N))
+    nder = M + N
+    derivatives = [(G - approximation).diff(s, i).subs({s: p}) for i in range(nder-1)]
+    denominator_constant = [a[0] - 1]  # set denom constant term = 1
+    equations = derivatives + denominator_constant
+    pars = sympy.solve(equations, a + b, dict=True)
+    return approximation.subs(pars[0])

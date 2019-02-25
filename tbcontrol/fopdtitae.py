@@ -1,8 +1,8 @@
 """
 ITAE parameters for FOPDT system
 
-This modole calculates the values of the PI/PID controller settings
-based on Table 11.3 of Sebord, Edgar, Melichamp and Lewin (itself
+This module calculates the values of the PI/PID controller settings
+based on Table 11.3 of Seborg, Edgar, Melichamp and Lewin (itself
 based on Smith and Corripio, 1997).
 """
 
@@ -12,20 +12,24 @@ def f1(K, tau, theta, A, B):
     Kc = Y/K
     return Kc
 
+
 def f2(K, tau, theta, A, B):
     Y = A*(theta/tau)**B
     tau_I = tau/Y
     return tau_I
+
 
 def f3(K, tau, theta, A, B):
     Y = A*(theta/tau)**B
     tau_D = Y*tau
     return tau_D
 
+
 def f4(K, tau, theta, A, B):
     Y = A + B*(theta/tau)
     tau_I = tau/Y
     return tau_I
+
 
 # dictionary to allow lookup of the coefficients and the relation to use
 table = {'Disturbance': {'PI': {'P': (0.859, -0.977, f1),
@@ -38,6 +42,7 @@ table = {'Disturbance': {'PI': {'P': (0.859, -0.977, f1),
                        'PID': {'P': (0.965, -0.85, f1),
                                'I': (0.796, -0.1465, f4),
                                'D': (0.308, 0.929, f3)}}}
+
 
 def parameters(K, tau, theta, type_of_input='Disturbance', type_of_controller='PI'):
     retval = []
