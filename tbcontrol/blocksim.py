@@ -14,7 +14,16 @@ class Block:
 
 
 class LTI(Block):
+    """Represents a general Linear Time Invariant system with optional delay"""
     def __init__(self, name, inputname, outputname, numerator, denominator=1, delay=0):
+        """:param name: str, The name of the block
+           :param inputname: str, the name of the input signal
+           :param outputname: str, the name of the output signal
+           :param numerator: number or iterable of numbers for numerator coefficients in descending order
+           :param denominator:  number or iterable of numbers for denominator coefficients in descending order
+           :param delay: number, delay
+
+        """
         super().__init__(name, inputname, outputname)
 
         self.G = scipy.signal.lti(numerator, denominator)
@@ -131,9 +140,9 @@ class DiscreteTF(Block):
     
     def __init__(self, name, input_name, output_name, dt, numerator, denominator):
         """
-        Simulates a discrete transfer function.        
+        Represents a discrete transfer function.
         The TF must be of the form: (b_N * z**(-N) + ... + b_0)/(a_M z**(-M) + ... + a_0 ).
-        
+
         Parameters
         ----------
         dt : float
@@ -147,18 +156,18 @@ class DiscreteTF(Block):
 
         """
         super().__init__(name, input_name, output_name)
-        
+
         self.dt = dt
         self.y_cos = denominator
         self.u_cos = numerator
-        
+
         self.ys = numpy.zeros(len(self.y_cos))
         self.us = numpy.zeros(len(self.u_cos))
         self.next_sample = 0
-        
+
         self.state = 0.0
         self.output = 0.0
-    
+
     def reset(self):
         self.ys = numpy.zeros(len(self.y_cos))
         self.us = numpy.zeros(len(self.u_cos))
@@ -193,6 +202,13 @@ class DiscreteTF(Block):
 
 class Diagram:
     def __init__(self, blocks, sums, inputs):
+        """Create a diagram
+
+        :param blocks: list of blocks
+        :param sums: sums specified as dictionaries with keys equal to output signal and values as tuples of strings of the form "<sign><signal>"
+        :param inputs: inputs specified as dictionaries with keys equal to signal names and values functions of time
+        """
+        assert all(isinstance(block, Block) for block in blocks), "blocks must be a list of blocks"
         self.blocks = blocks
         self.sums = sums
         self.inputs = inputs
@@ -219,11 +235,21 @@ class Diagram:
             block.change_state(block.state + block.derivative(u)*dt)
         return signals
 
-    def simulate(self, ts):
+    def simulate(self, ts, progress=False):
+        """Simulate diagram
+
+        :param ts: iterable, timesteps to simulate. Note this should be equally spaced
+        :param progress: display progress bar
+
+        Returns dictionary with keys for each signal in the diagram and values an iterable of values
+        """
+
+        if progress:
+            from tqdm import tqdm_notebook as tqdm
         dt = ts[1]
         outputs = defaultdict(list)
         self.reset()
-        for t in ts:
+        for t in tqdm(ts) if progress else ts:
             newoutputs = self.step(t, dt)
             for signal, value in newoutputs.items():
                 outputs[signal].append(value)
@@ -231,3 +257,13 @@ class Diagram:
 
     def __repr__(self):
         return '\n'.join(str(b) for b in self.blocks)
+
+
+# Input functions
+def step(initial=0, starttime=0, size=1):
+    def stepfunction(t):
+        if t < starttime:
+            return initial
+        else:
+            return initial + size
+    return stepfunction

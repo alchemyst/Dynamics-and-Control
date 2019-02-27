@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="tbcontrol",
-    version="0.0.2",
+    version="0.0.4",
     author="Carl Sandrock",
     author_email="carl.sandrock@gmail.com",
     description="Textbook Control Problem package",
@@ -20,5 +20,5 @@ setuptools.setup(
         "Intended Audience :: Education",
     ],
     python_requires=">=3.5",
-    install_requires=["numpy", "scipy"],
+    install_requires=["numpy", "scipy", "tqdm"],
 )
