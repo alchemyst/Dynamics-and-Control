@@ -56,7 +56,26 @@ class LTI(Block):
 
 class PI(LTI):
     def __init__(self, name, inputname, outputname, Kc, tau_i):
+        """Textbook PI controller"""
         super().__init__(name, inputname, outputname, [Kc*tau_i, Kc], [tau_i, 0])
+
+
+class PID(LTI):
+    def __init__(self, name, inputname, outputname, Kc, tau_i, tau_d=0, alpha_f=0.1):
+        """Standard realisable parallel form ISA PID controller with first order filter.
+
+        If tau_d=0, a PI controller is returned"""
+
+        if tau_d == 0:
+            return PI(name, inputname, outputname, Kc, tau_i)
+
+        super().__init__(name, inputname, outputname,
+                         numerator=[Kc*alpha_f*tau_d*tau_i + Kc*tau_d*tau_d,
+                                    Kc*alpha_f*tau_d + Kc*tau_i,
+                                    Kc],
+                         denominator=[alpha_f*tau_d*tau_i,
+                                      tau_i,
+                                      0.0])
 
 
 class Zero(Block):
@@ -77,8 +96,13 @@ class Zero(Block):
         return 0
 
 
-class AE(Block):
+class AlgebraicEquation(Block):
     def __init__(self, name, inputname, outputname, f, delay=0):
+        """Relationship between input and output specified by an external function
+
+        :param f: function(t, u)
+        :param delay: optional delay
+        """
         super().__init__(name, inputname, outputname)
         self.f = f # y = f(t, u)
         if delay > 0:
