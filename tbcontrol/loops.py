@@ -1,7 +1,7 @@
 """Utility functions for handling feedback loop calculations"""
 
 
-def feedback(forward, backward):
+def feedback(forward, backward=1):
     """Calculate closed loop transfer function
 
          +     ┌────────┐
