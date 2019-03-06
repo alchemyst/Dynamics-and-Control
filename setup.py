@@ -3,9 +3,12 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+# See https://packaging.python.org/guides/single-sourcing-package-version/
+exec(open("tbcontrol/version.py").read())
+
 setuptools.setup(
     name="tbcontrol",
-    version="0.0.6",
+    version=__version__,
     author="Carl Sandrock",
     author_email="carl.sandrock@gmail.com",
     description="Textbook Control Problem package",
