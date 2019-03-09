@@ -70,7 +70,7 @@ class PID(LTI):
             return PI(name, inputname, outputname, Kc, tau_i)
 
         super().__init__(name, inputname, outputname,
-                         numerator=[Kc*alpha_f*tau_d*tau_i + Kc*tau_d*tau_d,
+                         numerator=[Kc*alpha_f*tau_d*tau_i + Kc*tau_d*tau_i,
                                     Kc*alpha_f*tau_d + Kc*tau_i,
                                     Kc],
                          denominator=[alpha_f*tau_d*tau_i,
