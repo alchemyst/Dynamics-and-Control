@@ -4,7 +4,7 @@ language: python
 
 python:
   # Note: this is currently ignored because the environment contains an explicit python version
-  # als see the later note on this
+  # also see the later note on this
   - "3.6"
 
 cache:
@@ -34,4 +34,4 @@ install:
 
 # Run test
 script:
-  - pytest --verbose --durations=5 test.py
+  - pytest --verbose test.py
