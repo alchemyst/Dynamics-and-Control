@@ -97,31 +97,21 @@ class Zero(Block):
 
 
 class AlgebraicEquation(Block):
-    def __init__(self, name, inputname, outputname, f, delay=0):
+    def __init__(self, name, inputname, outputname, f):
         """Relationship between input and output specified by an external function
 
         :param f: function(t, u)
-        :param delay: optional delay
         """
         super().__init__(name, inputname, outputname)
-        self.f = f # y = f(t, u)
-        if delay > 0:
-            self.delay = Deadtime(None, None, None, delay)
-        else:
-            self.delay = None
+        self.f = f
         self.reset()
 
     def reset(self):
         self.change_state(0)
         self.y = self.output = 0
-        if self.delay:
-            self.delay.reset()
 
     def change_input(self, t, u):
-        self.y = self.f(t, u)
-        if self.delay:
-            self.y = self.delay.change_input(t, self.y)
-        self.output = self.y
+        self.y = self.output = self.f(t, u)
         return self.output
 
     def change_state(self, x):
