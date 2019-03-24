@@ -270,13 +270,16 @@ class Diagram:
 
         if progress:
             from tqdm import tqdm_notebook as tqdm
+            pbar = tqdm(total=len(ts))
         dt = ts[1]
         outputs = defaultdict(list)
         self.reset()
-        for t in tqdm(ts) if progress else ts:
+        for t in ts:
             newoutputs = self.step(t, dt)
             for signal, value in newoutputs.items():
                 outputs[signal].append(value)
+            if progress:
+                pbar.update()
         return outputs
 
     def __repr__(self):
