@@ -237,6 +237,7 @@ class Diagram:
     def reset(self):
         self.signals = {b.inputname: 0 for b in self.blocks}
         self.signals.update({b.outputname: 0 for b in self.blocks})
+        self.signals.update({output: 0 for output in self.sums})
         for block in self.blocks:
             block.reset()
 
