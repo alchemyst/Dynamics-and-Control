@@ -222,7 +222,13 @@ class Diagram:
         :param sums: sums specified as dictionaries with keys equal to output signal and values as tuples of strings of the form "<sign><signal>"
         :param inputs: inputs specified as dictionaries with keys equal to signal names and values functions of time
         """
-        assert all(isinstance(block, Block) for block in blocks), "blocks must be a list of blocks"
+        if not all(isinstance(block, Block) for block in blocks):
+            raise TypeError("blocks must be a list of blocks")
+        for output, cinputs in sums.items():
+            for s in cinputs:
+                if s[0] not in '+-':
+                    raise ValueError(f"In the sum '{output}': {cinputs}, there is no sign for '{s}'")
+
         self.blocks = blocks
         self.sums = sums
         self.inputs = inputs
