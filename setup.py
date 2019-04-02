@@ -23,5 +23,5 @@ setuptools.setup(
         "Intended Audience :: Education",
     ],
     python_requires=">=3.5",
-    install_requires=["numpy", "scipy", "tqdm"],
+    install_requires=["numpy", "scipy", "tqdm", "packaging"],
 )
