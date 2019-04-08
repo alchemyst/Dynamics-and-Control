@@ -36,3 +36,16 @@ def pade(G, s, M, N, p=0):
     equations = derivatives + denominator_constant
     pars = sympy.solve(equations, a + b, dict=True)
     return approximation.subs(pars[0])
+
+
+def sampledvalues(fz, z, N):
+    """Return the first N values of a z transform's inverse
+
+    Arguments:
+
+        fz: sympy symbolic expression in terms of z
+        z: the symbol used in fz for the z transform
+        N: The number of time steps to return
+    """
+    q = sympy.Symbol('q')
+    return sympy.poly(fz.subs(z, q**-1).series(q, 0, N).removeO(), q).all_coeffs()[::-1]
