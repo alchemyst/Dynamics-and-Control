@@ -39,7 +39,7 @@ def pade(G, s, M, N, p=0):
 
 
 def sampledvalues(fz, z, N):
-    """Return the first N values of a z transform's inverse
+    """Return the first N values of a z transform's inverse via Taylor series expansion
 
     Arguments:
 
@@ -49,3 +49,19 @@ def sampledvalues(fz, z, N):
     """
     q = sympy.Symbol('q')
     return sympy.poly(fz.subs(z, q**-1).series(q, 0, N).removeO(), q).all_coeffs()[::-1]
+
+
+def evaluate_at_times(expression, t, ts):
+    """Evaluate a sympy expression over time
+
+    Arguments:
+    
+        expression: a sympy expression containing references to a time variable `t`
+        t : a `sympy.Symbol` which is in `expression` and will be subsitituted from `ts`
+        ts: an iterable containing times for evaluation. Should be only ints or floats
+
+    versionadded: 0.1.3
+    """
+
+    return [expression.subs(t, ti).subs({sympy.Heaviside(float(0)): 1, 
+                                         sympy.Heaviside(0): 1}) for ti in ts]
