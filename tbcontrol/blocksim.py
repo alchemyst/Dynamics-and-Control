@@ -54,13 +54,24 @@ class LTI(Block):
         return self.Gss.A.dot(self.x) + self.Gss.B.dot(e)
 
 
-class PI(LTI):
+class Controller(LTI):
+    def __init__(self, name, inputname, outputname, numerator, denominator=1, delay=0, automatic=True):
+        self.automatic = True
+        super().__init__(name, inputname, outputname, numerator, denominator, delay)
+
+    def change_input(self, t, u):
+        if self.automatic:
+            return super().change_input(t, u)
+        else:
+            return self.output
+
+class PI(Controller):
     def __init__(self, name, inputname, outputname, Kc, tau_i):
         """Textbook PI controller"""
         super().__init__(name, inputname, outputname, [Kc*tau_i, Kc], [tau_i, 0])
 
 
-class PID(LTI):
+class PID(Controller):
     def __init__(self, name, inputname, outputname, Kc, tau_i, tau_d=0, alpha_f=0.1):
         """Standard realisable parallel form ISA PID controller with first order filter.
 
