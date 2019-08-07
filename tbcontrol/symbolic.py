@@ -2,6 +2,37 @@
 
 import sympy
 
+
+def linearise(expr, variables, bars=None):
+    """Linearise a nonlinear expression
+    
+    Parameters
+    ----------
+    expr: A sympy expression - this could be a single term or a sum of terms
+    variables: The variables in the expression - all the other symbols in the expression will be treated as parameters
+    bars: the "barred" versions of the variables. If bars is None, new barred versions will be built and returned
+    
+    Note: This function will *not work correctly with derivatives in expr*
+    """
+    if bars is None:
+        returnbars = True
+        bars = [sympy.Symbol(f"{variable.name}bar") for variable in variables]
+
+    vars_and_bars = list(zip(variables, bars))
+
+    # This is the constant term
+    result = expr.subs(vars_and_bars)
+
+    # now, we take the derivative with respect to each variable, evaluated at the steady state:
+    for variable, bar in vars_and_bars:
+        result += (variable - bar)*expr.diff(variable).subs(vars_and_bars)
+
+    if returnbars:
+        return bars, result
+    else:
+        return result
+
+
 def routh(p):
     """ Construct the Routh-Hurwitz array given a polynomial in s
 
