@@ -17,6 +17,8 @@ def linearise(expr, variables, bars=None):
     if bars is None:
         returnbars = True
         bars = [sympy.Symbol(f"{variable.name}bar") for variable in variables]
+    else:
+        returnbars = False
 
     vars_and_bars = list(zip(variables, bars))
 
