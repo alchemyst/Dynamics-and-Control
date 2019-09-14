@@ -32,6 +32,7 @@ install:
   - pip install .
   - conda env export  # debugging
 
-# Run test
+# Run tests
 script:
   - pytest --verbose test.py
+  - pytest tests
