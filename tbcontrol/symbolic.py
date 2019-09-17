@@ -71,6 +71,22 @@ def pade(G, s, M, N, p=0):
     return approximation.subs(pars[0])
 
 
+def ss2tf(A, B, C, D, s):
+    """Convert state space matrices to a transfer function matrix
+
+    Arguments:
+    A, B, C, D : sympy.Matrix objects containing the state space matrices
+    s : symbol to use for s
+
+    Returns:
+    G : Transfer function matrix
+    """
+    I = sympy.eye(A.shape[0])
+
+    G = C*(s*I - A).inv()*B + D
+    return G
+
+
 def sampledvalues(fz, z, N):
     """Return the first N values of a z transform's inverse via Taylor series expansion
 
