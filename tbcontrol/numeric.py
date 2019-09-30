@@ -24,6 +24,12 @@ def skogestad_half(num_timeconstants, den_timeconstants, delay, order):
     if order > 2:
         raise NotImplementedError("Skogestad's rule is only meant for first or second order.")
 
+    def coerce(inp):
+        return numpy.atleast_1d(numpy.asarray(inp, dtype=float))
+
+    num_timeconstants = coerce(num_timeconstants)
+    den_timeconstants = coerce(den_timeconstants)
+
     # Ensure time constants are in descending order
     den_timeconstants = numpy.sort(den_timeconstants)[::-1]
 

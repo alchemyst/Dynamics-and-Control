@@ -43,3 +43,13 @@ def test_skogestad_half_seborg_ex5_5():
     assert delay == pytest.approx(2.15, 0.01)
     assert timeconstants[0] == pytest.approx(12)
     assert timeconstants[1] == pytest.approx(3.1)
+
+def test_skogestad_half_integercoefficients():
+    # this used to break with earlier versions of the code
+    num_timeconstants = [10]
+    den_timeconstants = [20, 5, 5]
+
+    delay, timeconstants = skogestad_half(num_timeconstants, den_timeconstants, delay=10, order=1)
+
+    assert delay == pytest.approx(7.5, 0.01)
+    assert timeconstants[0] == pytest.approx(22.5)
