@@ -19,3 +19,4 @@ dependencies:
   - ipywidgets==7.5.0
   - pytest-xdist==1.27.0
   - xlrd==1.2.0
+  - patsy==0.5.1
