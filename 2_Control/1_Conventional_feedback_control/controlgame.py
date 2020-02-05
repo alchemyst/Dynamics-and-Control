@@ -68,6 +68,18 @@ class ControlGame:
         self.timer = tornado.ioloop.PeriodicCallback(self.update, SLEEP)
         
         self.running = False
+        self.reset()
+
+    def reset(self):
+        self.ts = []
+        self.sps = []
+        self.mvs = []
+        self.cvs = []
+
+        self.t = 0
+        self.score = 0
+        sself.scoretext.value = '0'
+
 
     def run(self, args):
         numpy.random.seed(SEED)
@@ -77,13 +89,7 @@ class ControlGame:
         self.setpointgenerator = SetPointGenerator()
         self.system = ControlledSystem()
 
-        self.ts = []
-        self.sps = []
-        self.mvs = []
-        self.cvs = []
-
-        self.t = 0
-        self.score = 0
+        self.reset()
 
         self.timer.start()
         
