@@ -78,7 +78,7 @@ class ControlGame:
 
         self.t = 0
         self.score = 0
-        sself.scoretext.value = '0'
+        self.scoretext.value = '0'
 
 
     def run(self, args):
