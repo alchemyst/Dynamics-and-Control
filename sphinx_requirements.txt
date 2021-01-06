@@ -1,2 +1,3 @@
 nbsphinx
 recommonmark
+ipykernel
