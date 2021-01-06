@@ -14,3 +14,5 @@ The links below will allow you to view the notebooks using the notebook viewer. 
 We use Travis CI to check every update made to the repository. Note that we only test on the version of Python specified in `environment.yml`.
 
 [![Build Status](https://travis-ci.org/alchemyst/Dynamics-and-Control.svg?branch=master)](https://travis-ci.org/alchemyst/Dynamics-and-Control)
+
+[![Documentation Status](https://readthedocs.org/projects/dynamics-and-control/badge/?version=latest)](https://dynamics-and-control.readthedocs.io/en/latest/?badge=latest)
