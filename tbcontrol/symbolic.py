@@ -1,7 +1,7 @@
 """Control functions which operate symbolically using sympy"""
 
 import sympy
-
+import numpy
 
 def linearise(expr, variables, bars=None):
     """Linearise a nonlinear expression
@@ -53,6 +53,15 @@ def routh(p):
         for j in range(N//2):
             S = M[[i-2, i-1], [0, j+1]]
             M[i, j] = sympy.simplify(-S.det()/M[i-1,0])
+        # If a row of the routh table becomes zero,Take the derivative of the previous row and substitute it instead
+        # Ref: Norman S. Nise, Control Systems Engineering, 8th Edition, Chapter 6, Section 3
+        if M[i,:] == sympy.Matrix([[0]*(M.shape[1])]):
+            #Find the coefficients on taking the derivative
+            diff_arr = numpy.arange(N-i, -0.1, -2, dtype=int)
+            diff_arr.resize(M.shape[1])
+            diff_arr = sympy.Matrix(numpy.asarray([diff_arr]))
+            #Multiply the coefficients with the value in previous row
+            M[i,:] = sympy.matrix_multiply_elementwise(diff_arr,M[i-1,:])
     return M[:, :-1]
 
 
