@@ -1,0 +1,18 @@
+name: Run tests
+run-name: Run tests
+on: [push]
+jobs:
+  Run-Tests:
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          activate-environment: dynamicscontrol
+          environment-file: environment.yml
+          python-version: 3.7
+          auto-activate-base: false
+      - run: pip install .
+      - run: |
+          pytest tests
+          pytest --verbose test_all_notebooks.py
