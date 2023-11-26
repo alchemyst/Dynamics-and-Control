@@ -13,7 +13,7 @@ jobs:
         with:
           activate-environment: dynamicscontrol
           environment-file: environment.yml
-          #python-version: 3.7
+          python-version: 3.11
           auto-activate-base: false
       - run: pip install .
       - run: |
