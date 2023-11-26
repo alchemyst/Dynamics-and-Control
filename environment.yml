@@ -12,6 +12,7 @@ dependencies:
   - slycot
   - pandas
   - keras
+  - tensorflow-base
   - scikit-learn
   - pytest
   - jupyter
