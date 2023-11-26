@@ -3,22 +3,23 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.7.3
-  - matplotlib==3.1.0
-  - numpy==1.16.4
-  - scipy==1.3.0
-  - sympy==1.4.0
-  - control>=0.8.3
-  - slycot=0.3.5
-  - pandas=0.23.4
+  #- python=3.7.3
+  - matplotlib
+  - numpy
+  - scipy
+  - sympy
+  - control
+  - slycot
+  - pandas
   - keras
-  - scikit-learn==0.21.2
-  - pytest==5.0.1
-  - jupyter==1.0.0
-  - ipython==7.6.1
-  - ipywidgets==7.5.0
-  - pytest-xdist==1.27.0
-  - xlrd==1.2.0
-  - patsy==0.5.1
+  - scikit-learn
+  - pytest
+  - jupyter
+  - ipython
+  - ipywidgets
+  - pytest-xdist
+  - xlrd
+  - patsy
+  - pip # we need this for pip to work right
   - pip:
-    - tbcontrol
+      - tbcontrol
