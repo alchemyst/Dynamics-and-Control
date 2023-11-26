@@ -19,6 +19,7 @@ dependencies:
   - ipywidgets
   - pytest-xdist
   - xlrd
+  - openpyxl
   - patsy
   - pip # we need this for pip to work right
   - pip:
