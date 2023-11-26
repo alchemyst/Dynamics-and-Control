@@ -4,6 +4,9 @@ on: [push]
 jobs:
   Run-Tests:
     runs-on: "ubuntu-latest"
+    defaults:
+      run:
+        shell: bash -l {0}
     steps:
       - uses: actions/checkout@v4
       - uses: conda-incubator/setup-miniconda@v2
