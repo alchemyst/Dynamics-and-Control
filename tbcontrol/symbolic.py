@@ -1,17 +1,17 @@
 """Control functions which operate symbolically using sympy"""
 
 import sympy
-import numpy
+
 
 def linearise(expr, variables, bars=None):
     """Linearise a nonlinear expression
-    
+
     Parameters
     ----------
     expr: A sympy expression - this could be a single term or a sum of terms
     variables: The variables in the expression - all the other symbols in the expression will be treated as parameters
     bars: the "barred" versions of the variables. If bars is None, new barred versions will be built and returned
-    
+
     Note: This function will *not work correctly with derivatives in expr*
     """
     if bars is None:
@@ -52,16 +52,16 @@ def routh(p):
     for i in range(2, N):
         for j in range(N//2):
             S = M[[i-2, i-1], [0, j+1]]
-            M[i, j] = sympy.simplify(-S.det()/M[i-1,0])
+            M[i, j] = sympy.simplify(-S.det()/M[i-1, 0])
         # If a row of the routh table becomes zero,Take the derivative of the previous row and substitute it instead
         # Ref: Norman S. Nise, Control Systems Engineering, 8th Edition, Chapter 6, Section 3
-        if M[i,:] == sympy.Matrix([[0]*(M.shape[1])]):
-            #Find the coefficients on taking the derivative
-            diff_arr = numpy.arange(N-i, -0.1, -2, dtype=int)
-            diff_arr.resize(M.shape[1])
-            diff_arr = sympy.Matrix(numpy.asarray([diff_arr]))
-            #Multiply the coefficients with the value in previous row
-            M[i,:] = sympy.matrix_multiply_elementwise(diff_arr,M[i-1,:])
+        if M[i, :] == sympy.Matrix([[0]*(M.shape[1])]):
+            # Find the coefficients on taking the derivative of the Auxiliary polynomial
+            diff_arr = list(range(N-i, -1, -2))
+            diff_arr.extend([0]*(M.shape[1] - len(diff_arr)))
+            diff_arr = sympy.Matrix([diff_arr])
+            # Multiply the coefficients with the value in previous row
+            M[i, :] = sympy.matrix_multiply_elementwise(diff_arr, M[i-1, :])
     return M[:, :-1]
 
 
@@ -71,9 +71,11 @@ def pade(G, s, M, N, p=0):
     N += 1
     b = sympy.symbols('b:{}'.format(M))
     a = sympy.symbols('a:{}'.format(N))
-    approximation = sum(b[i]*s**i for i in range(M))/sum(a[i]*s**i for i in range(N))
+    approximation = sum(b[i]*s**i for i in range(M)) / \
+        sum(a[i]*s**i for i in range(N))
     nder = M + N
-    derivatives = [(G - approximation).diff(s, i).subs({s: p}) for i in range(nder-1)]
+    derivatives = [(G - approximation).diff(s,
+                                            i).subs({s: p}) for i in range(nder-1)]
     denominator_constant = [a[0] - 1]  # set denom constant term = 1
     equations = derivatives + denominator_constant
     pars = sympy.solve(equations, a + b, dict=True)
@@ -113,7 +115,7 @@ def evaluate_at_times(expression, t, ts):
     """Evaluate a sympy expression over time
 
     Arguments:
-    
+
         expression: a sympy expression containing references to a time variable `t`
         t : a `sympy.Symbol` which is in `expression` and will be subsitituted from `ts`
         ts: an iterable containing times for evaluation. Should be only ints or floats
@@ -121,5 +123,5 @@ def evaluate_at_times(expression, t, ts):
     versionadded: 0.1.3
     """
 
-    return [expression.subs(t, ti).subs({sympy.Heaviside(float(0)): 1, 
+    return [expression.subs(t, ti).subs({sympy.Heaviside(float(0)): 1,
                                          sympy.Heaviside(0): 1}) for ti in ts]
