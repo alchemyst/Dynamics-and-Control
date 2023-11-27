@@ -12,8 +12,9 @@ The links below will allow you to view the notebooks using the notebook viewer. 
 * [View in Notebook Viewer](https://nbviewer.ipython.org/github/alchemyst/Dynamics-and-Control/blob/master/TOC.ipynb)
 * [View on GitHub](https://github.com/alchemyst/Dynamics-and-Control/blob/master/TOC.ipynb)
 
-We use Travis CI to check every update made to the repository. Note that we only test on the version of Python specified in `environment.yml`.
+We use a GitHub action to check every update made to the repository.
 
-[![Build Status](https://travis-ci.org/alchemyst/Dynamics-and-Control.svg?branch=master)](https://travis-ci.org/alchemyst/Dynamics-and-Control)
+![Test status](https://github.com/alchemyst/Dynamics-and-Control/workflows/test.yml/badge.svg)
+
 
 [![Documentation Status](https://readthedocs.org/projects/dynamics-and-control/badge/?version=latest)](https://dynamics-and-control.readthedocs.io/en/latest/?badge=latest)
