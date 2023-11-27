@@ -14,7 +14,7 @@ The links below will allow you to view the notebooks using the notebook viewer. 
 
 We use a GitHub action to check every update made to the repository.
 
-![Test status](https://github.com/alchemyst/Dynamics-and-Control/workflows/test.yml/badge.svg)
+![Test status](https://github.com/alchemyst/Dynamics-and-Control/workflows/test.yml/badge.svg?event=push)
 
 
 [![Documentation Status](https://readthedocs.org/projects/dynamics-and-control/badge/?version=latest)](https://dynamics-and-control.readthedocs.io/en/latest/?badge=latest)
