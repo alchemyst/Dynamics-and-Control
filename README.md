@@ -18,3 +18,4 @@ We use a GitHub action to check every update made to the repository.
 
 
 [![Documentation Status](https://readthedocs.org/projects/dynamics-and-control/badge/?version=latest)](https://dynamics-and-control.readthedocs.io/en/latest/?badge=latest)
+πin
