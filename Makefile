@@ -16,10 +16,10 @@ distclean:
 	-rm dist/*
 
 dist:
-	python3 setup.py sdist bdist_wheel
+	uv build
 
 upload:
-	twine upload dist/*
+	uv publish
 
 .PHONY: help Makefile distclean dist upload
 

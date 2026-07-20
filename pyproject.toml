@@ -1,0 +1,108 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tbcontrol"
+dynamic = ["version"]
+description = "Helpers for solving textbook dynamics and control problems"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "GPL-3.0-only"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Carl Sandrock", email = "carl.sandrock@gmail.com" },
+]
+classifiers = [
+    "Intended Audience :: Education",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+    "matplotlib",
+    "numpy",
+    "packaging",
+    "scipy",
+    "sympy",
+    "tqdm",
+]
+
+[project.urls]
+Documentation = "https://dynamics-and-control.readthedocs.io/"
+Repository = "https://github.com/alchemyst/Dynamics-and-Control"
+
+[dependency-groups]
+# Installed by a plain `uv sync`: packages used by the tested notebooks,
+# excluding the one neural-network notebook and development-only tooling.
+default = [
+    "control>=0.10.2,<0.11",
+    "ipykernel>=6.29",
+    "ipython>=8.27",
+    "ipywidgets>=8.1",
+    "jupyterlab>=4.2,<5",
+    "matplotlib>=3.9,<4",
+    "nbdime>=4.0.4",
+    "numpy>=2,<3",
+    "openpyxl>=3.1,<4",
+    "packaging>=24",
+    "pandas>=2.2,<3",
+    "patsy>=1,<2",
+    "scikit-learn>=1.6,<2",
+    "scipy>=1.14,<2",
+    "slycot>=0.7,<0.8",
+    "sympy>=1.13,<2",
+    "tqdm>=4.66",
+]
+
+# Required by 1_Dynamics/7_System_identification/Neural networks.ipynb.
+ml-ai = [
+    "keras>=3.13,<4; python_version >= '3.11'",
+    "tensorflow>=2.21,<3; python_version >= '3.11'",
+]
+
+test = [
+    "pytest>=8.3,<10",
+]
+
+notebook-test = [
+    "nbconvert>=7.16,<8",
+    "nbformat>=5.10,<6",
+    "pytest-xdist>=3.6,<4",
+]
+
+docs = [
+    "myst-parser>=4,<5",
+    "nbsphinx>=0.9,<1",
+    "sphinx>=8,<10",
+    "sphinx-rtd-theme>=3,<4",
+]
+
+[tool.hatch.version]
+path = "tbcontrol/version.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/LICENSE",
+    "/README.md",
+    "/pyproject.toml",
+    "/tbcontrol",
+    "/tests",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["tbcontrol"]
+
+[tool.uv]
+default-groups = ["default"]
+required-environments = [
+    "sys_platform == 'darwin' and platform_machine == 'arm64'",
+    "sys_platform == 'linux' and platform_machine == 'x86_64'",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -35,7 +35,7 @@ ignores = [line.strip() for line in open('.testignore') if line.strip()]
 notebooks = [notebook for notebook in searchpath.glob('**/*.ipynb')
              if not (any(parent.startswith('.')
                          for parent in notebook.parent.parts)
-                     or any(notebook.match(pattern)
+                     or any(notebook.full_match(pattern)
                             for pattern in ignores))]
 
 notebooks.sort()

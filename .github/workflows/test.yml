@@ -1,21 +1,58 @@
 name: Run tests
-run-name: Run tests
-on: [push]
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
 jobs:
-  Run-Tests:
-    runs-on: "ubuntu-latest"
-    defaults:
-      run:
-        shell: bash -l {0}
+  library:
+    name: tbcontrol / Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
     steps:
-      - uses: actions/checkout@v4
-      - uses: conda-incubator/setup-miniconda@v2
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Install uv and Python
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
         with:
-          activate-environment: dynamicscontrol
-          environment-file: environment.yml
-          python-version: 3.11
-          auto-activate-base: false
-      - run: pip install .
-      - run: |
-          pytest tests
-          pytest --verbose test_all_notebooks.py
+          enable-cache: true
+          python-version: ${{ matrix.python-version }}
+          version: "0.11.29"
+
+      - name: Install the locked library test environment
+        run: uv sync --locked --no-default-groups --group test
+
+      - name: Run package tests
+        run: uv run --locked --no-default-groups --group test pytest tests
+
+  notebooks:
+    name: Notebooks / Python 3.13
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      MPLBACKEND: Agg
+      TF_CPP_MIN_LOG_LEVEL: "2"
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Install uv and Python
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+        with:
+          enable-cache: true
+          python-version: "3.13"
+          version: "0.11.29"
+
+      - name: Install the locked notebook test environment
+        run: uv sync --locked --group ml-ai --group test --group notebook-test
+
+      - name: Run notebook tests
+        run: uv run --locked --group ml-ai --group test --group notebook-test pytest -n 2 --verbose test_all_notebooks.py

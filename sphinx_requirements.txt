@@ -1,4 +1,0 @@
-nbsphinx
-recommonmark
-ipykernel
-sphinx-rtd-theme
