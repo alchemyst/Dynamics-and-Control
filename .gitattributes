@@ -1,0 +1,11 @@
+# Notebook handling. These attributes are committed, but the drivers they name
+# are defined in .git/config and are NOT cloned - run `make setup-git` once per
+# checkout. See "Notebook hygiene" in README.md.
+
+# Normalise notebook metadata on the way into the index, leaving the working
+# tree alone so editors can stamp whatever they like.
+*.ipynb filter=nbclean
+
+# Readable notebook diffs and merges, via nbdime.
+*.ipynb	diff=jupyternotebook
+*.ipynb	merge=jupyternotebook

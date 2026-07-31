@@ -62,6 +62,32 @@ direnv allow
 
 Configure editors and notebook clients to use `.venv/bin/python`.
 
+## Notebook hygiene
+
+This repository commits notebook output on purpose — nbviewer and Read the Docs both serve the
+stored results, and `conf.py` sets `nbsphinx_execute = 'never'`. Tools that strip output, such as a
+default `nbstripout` setup, are therefore the wrong thing to install here.
+
+What does get normalised is metadata. Editors and Jupyter clients write their own kernel labels and
+ipywidgets state into notebooks, which otherwise shows up as noise in every diff. A git *clean*
+filter handles this on the way into the index, so the working tree is never modified and editors are
+left to do as they please. `tools/nbclean.py` drops `anaconda-cloud` and `widgets`, and settles
+`kernelspec.display_name` on `Python 3`. Cell output is not touched.
+
+Alongside it, [nbdime](https://nbdime.readthedocs.io/) provides readable notebook diffs and merges.
+
+`.gitattributes` is committed, but the drivers it names are defined in `.git/config` and are **not**
+cloned. Run this once per checkout, or the attributes silently do nothing:
+
+```shell
+make setup-git
+```
+
+Two consequences worth knowing. Metadata that the filter removes lives only in your working copy, so
+a `git checkout` or `git stash` round-trip drops it — that is the intent, but it means the file on
+disk is not always what you last saved. And because git compares the *filtered* content, a notebook
+whose only change is stripped metadata correctly shows up as unmodified.
+
 ## Notebook and documentation links
 
 - [Notebook table of contents](https://nbviewer.org/github/alchemyst/Dynamics-and-Control/blob/master/TOC.ipynb)
