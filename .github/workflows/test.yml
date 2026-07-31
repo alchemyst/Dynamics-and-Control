@@ -1,8 +1,17 @@
 name: Run tests
 
+# Restricting push to master matters: with an unrestricted push trigger, every
+# branch that also has a pull request open runs the whole suite twice over the
+# same commit.
 on:
   push:
+    branches: [master]
   pull_request:
+
+# Superseded runs are of no interest, and the notebook job is not cheap.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -37,9 +46,10 @@ jobs:
     name: Notebooks / Python 3.13
     runs-on: ubuntu-latest
     timeout-minutes: 60
-    env:
-      MPLBACKEND: Agg
-      TF_CPP_MIN_LOG_LEVEL: "2"
+    # MPLBACKEND is deliberately not set. Inside a kernel the default is the
+    # inline backend, which is what a reader sees; forcing Agg suppresses inline
+    # figure capture in any notebook that does not declare %matplotlib itself,
+    # and the suite only checks for exceptions so it would never notice.
     steps:
       - name: Check out the repository
         uses: actions/checkout@v7
@@ -54,5 +64,8 @@ jobs:
       - name: Install the locked notebook test environment
         run: uv sync --locked --group test --group notebook-test
 
+      # ubuntu-latest gives public repositories four vCPUs, so -n 2 left half the
+      # runner idle. The floor is now the slowest single notebook rather than the
+      # worker count.
       - name: Run notebook tests
-        run: uv run --locked --group test --group notebook-test pytest -n 2 --verbose test_all_notebooks.py
+        run: uv run --locked --group test --group notebook-test pytest -n auto --verbose test_all_notebooks.py
