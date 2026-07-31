@@ -28,20 +28,18 @@ uv sync
 uv run jupyter lab
 ```
 
-The neural-network notebook and the test tools are kept in focused groups. Install them when running the complete test
-suite:
+The test tools are kept in focused groups. Install them when running the complete test suite:
 
 ```shell
-uv sync --group ml-ai --group test --group notebook-test
-uv run --group ml-ai --group test pytest tests
-uv run --group ml-ai --group test --group notebook-test pytest -n 2 --verbose test_all_notebooks.py
+uv sync --group test --group notebook-test
+uv run --group test pytest tests
+uv run --group test --group notebook-test pytest -n 2 --verbose test_all_notebooks.py
 ```
 
 The dependency groups are:
 
 - `default`: Jupyter and the constrained numerical, symbolic, control, spreadsheet, plotting, and notebook-diff packages
   used by this repository.
-- `ml-ai`: TensorFlow and Keras for `1_Dynamics/7_System_identification/Neural networks.ipynb`.
 - `test`: the lightweight `tbcontrol` package-test dependency.
 - `notebook-test`: notebook execution and parallel-test tooling.
 - `docs`: Sphinx and the documentation extensions used by Read the Docs.

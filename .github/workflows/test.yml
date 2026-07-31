@@ -52,7 +52,7 @@ jobs:
           version: "0.11.29"
 
       - name: Install the locked notebook test environment
-        run: uv sync --locked --group ml-ai --group test --group notebook-test
+        run: uv sync --locked --group test --group notebook-test
 
       - name: Run notebook tests
-        run: uv run --locked --group ml-ai --group test --group notebook-test pytest -n 2 --verbose test_all_notebooks.py
+        run: uv run --locked --group test --group notebook-test pytest -n 2 --verbose test_all_notebooks.py
