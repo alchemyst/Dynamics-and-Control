@@ -65,6 +65,10 @@ exclude_patterns = [
 html_theme = "sphinx_rtd_theme"
 html_theme_options = {
     "collapse_navigation": False,
+    # Part, chapter, notebook. The theme passes this as the sidebar toctree's
+    # maxdepth, overriding the directive, so it is what keeps the headings
+    # inside each notebook out of the navigation.
+    "navigation_depth": 3,
 }
 html_static_path = []
 
