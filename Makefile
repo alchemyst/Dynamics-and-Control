@@ -25,7 +25,7 @@ upload:
 # in .git/config, so this has to be run once per checkout or the attributes
 # silently do nothing.
 setup-git:
-	git config filter.nbclean.clean "python3 tools/nbclean.py"
+	git config filter.nbclean.clean "python3 tools/nbclean.py %f"
 	git config filter.nbclean.smudge cat
 	git config filter.nbclean.required true
 	uv run nbdime config-git --enable

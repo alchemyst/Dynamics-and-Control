@@ -23,17 +23,20 @@ At cell level:
     every run. Deliberate authoring choices such as ``collapsed``, ``scrolled``
     and ``slideshow`` are left alone.
 
-Enable it with::
+Enable it with ``make setup-git``. The ``.gitattributes`` entry is committed,
+but the filter definition lives in ``.git/config`` and is *not* cloned - it has
+to be set up once per checkout, or the filter silently does nothing.
 
-    git config filter.nbclean.clean "python3 tools/nbclean.py"
-    git config filter.nbclean.required true
-
-The ``.gitattributes`` entry is committed, but the filter definition above
-lives in ``.git/config`` and is *not* cloned - it has to be run once per
-checkout, or the filter silently does nothing.
+Git may start this filter and then decide it does not want the answer, which it
+signals by closing the pipes. That shows up here as a short read on stdin, a
+broken pipe on stdout, or both, and is entirely normal - during a branch switch
+git runs the filter over many files and stops as soon as it knows what it
+needs. Neither is worth reporting, so a result git refused to read is discarded
+in silence.
 """
 
 import json
+import os
 import sys
 
 STRIP_KEYS = ("anaconda-cloud", "widgets")
@@ -42,14 +45,15 @@ DISPLAY_NAME = "Python 3"
 
 
 def clean(raw):
-    """Return the normalised notebook bytes, or the input unchanged."""
+    """Return (normalised bytes, warning or None).
+
+    Anything we cannot parse is passed back untouched rather than guessed at,
+    so the filter can never turn a file we do not understand into a broken one.
+    """
     try:
         notebook = json.loads(raw.decode("utf-8"))
     except (UnicodeDecodeError, json.JSONDecodeError) as exc:
-        # Store it untouched rather than risk mangling something we do not
-        # understand. Git shows this on stderr.
-        print(f"nbclean: passing through unparsed notebook ({exc})", file=sys.stderr)
-        return raw
+        return raw, f"could not parse notebook, storing it unchanged ({exc})"
 
     metadata = notebook.get("metadata", {})
     for key in STRIP_KEYS:
@@ -64,8 +68,46 @@ def clean(raw):
             cell_metadata.pop(key, None)
 
     text = json.dumps(notebook, indent=1, sort_keys=True, ensure_ascii=False) + "\n"
-    return text.encode("utf-8")
+    return text.encode("utf-8"), None
+
+
+def short_read(name, raw):
+    """True when stdin held less than the file it came from.
+
+    Git hands the clean filter the entire working tree file, so a short read
+    means git closed the pipe partway through and has no use for the result.
+    A small result can still be written into the pipe buffer without raising,
+    so this is the only reliable way to tell that case apart from a notebook
+    that is genuinely malformed.
+    """
+    if not name:
+        return False
+    try:
+        return len(raw) < os.path.getsize(name)
+    except OSError:
+        return False
+
+
+def main(argv):
+    # Git substitutes %f with the path being filtered, so a warning can name it.
+    name = argv[1] if len(argv) > 1 else None
+    raw = sys.stdin.buffer.read()
+    result, warning = clean(raw)
+
+    try:
+        sys.stdout.buffer.write(result)
+        sys.stdout.buffer.flush()
+    except BrokenPipeError:
+        # Git is not reading the result. Point the remaining buffered output at
+        # devnull so the interpreter's shutdown flush cannot raise again, and
+        # say nothing.
+        os.dup2(os.open(os.devnull, os.O_WRONLY), sys.stdout.fileno())
+        return 0
+
+    if warning and not short_read(name, raw):
+        print(f"nbclean: {name or '<stdin>'}: {warning}", file=sys.stderr)
+    return 0
 
 
 if __name__ == "__main__":
-    sys.stdout.buffer.write(clean(sys.stdin.buffer.read()))
+    sys.exit(main(sys.argv))
