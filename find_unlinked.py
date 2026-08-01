@@ -24,6 +24,10 @@ for cell in toc.cells:
 for f in pathlib.Path('.').glob('**/*.ipynb'):
     if 'ipynb_checkpoints' in str(f):
         continue
+    # under_construction is deliberately not published, so it is not expected
+    # in the table of contents either.
+    if f.parts[0] == 'under_construction':
+        continue
     if str(f) not in linkedfiles:
         print(f"File '{str(f)}' not linked in TOC")
 
