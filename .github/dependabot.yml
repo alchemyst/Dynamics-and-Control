@@ -1,0 +1,27 @@
+version: 2
+
+# Security updates arrive on their own and need no configuration here. This
+# file adds routine version updates, which do.
+updates:
+  # The test workflow pins setup-uv by commit hash and uv by version, which is
+  # the right thing to do, but means nothing moves them without this.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]
+
+  # Every pull request here runs the notebook suite, so routine bumps are
+  # gathered into one. Major versions still arrive separately, since those are
+  # the ones worth looking at individually.
+  - package-ecosystem: uv
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 5
+    groups:
+      python-packages:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
