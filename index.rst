@@ -43,9 +43,9 @@ Time domain simulation
    1_Dynamics/2_Time_domain_simulation/Nonlinear CSTR.ipynb
    1_Dynamics/2_Time_domain_simulation/Mixing system.ipynb
 
-*********
+**************
 Linear systems
-*********
+**************
 
 .. toctree::
    :maxdepth: 2
@@ -56,9 +56,9 @@ Linear systems
    1_Dynamics/3_Linear_systems/Convolution.ipynb
    1_Dynamics/3_Linear_systems/Visualising complex functions.ipynb
 
-*********
+**************************************
 First and second order system Dynamics
-*********
+**************************************
 
 .. toctree::
    :maxdepth: 2
@@ -82,9 +82,9 @@ Complex system dynamics
    1_Dynamics/5_Complex_system_dynamics/Block diagram simplification.ipynb
    1_Dynamics/5_Complex_system_dynamics/Approximation.ipynb
 
-*********
+************************************
 Multivariable system representations
-*********
+************************************
 
 .. toctree::
    :maxdepth: 2
@@ -162,9 +162,9 @@ Laplace domain analysis of control systems
    2_Control/2_Laplace_domain_analysis_of_control_systems/SymPy Routh Array.ipynb
    2_Control/2_Laplace_domain_analysis_of_control_systems/Root locus diagrams.ipynb
 
-*********
+*************************************************
 PID controller design, tuning and troubleshooting
-*********
+*************************************************
 
 .. toctree::
    :maxdepth: 2
