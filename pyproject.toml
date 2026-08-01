@@ -56,7 +56,7 @@ default = [
     "scipy>=1.14,<2",
     "slycot>=0.7,<0.8",
     "sympy>=1.13,<2",
-    "tqdm>=4.66",
+    "tqdm>=4.70.0",
 ]
 
 test = [
