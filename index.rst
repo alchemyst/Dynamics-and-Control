@@ -147,7 +147,6 @@ Conventional feedback control
    2_Control/1_Conventional_feedback_control/Control game.ipynb
    2_Control/1_Conventional_feedback_control/PID controller step responses.ipynb
    2_Control/1_Conventional_feedback_control/Effect of Proportional Control.ipynb
-   tclab/TCLab PID.ipynb
    2_Control/1_Conventional_feedback_control/Closed loop controlled responses.ipynb
 
 ******************************************
@@ -261,8 +260,10 @@ Temperature Control Lab (TCLab)
    :numbered:
 
 
+   tclab/TCLab step test.ipynb
    tclab/FOPDT fit.ipynb
    tclab/TCLab PID.ipynb
+   tclab/Continuous PID on TCLab.ipynb
    tclab/Frequency domain.ipynb
  
 Search Page

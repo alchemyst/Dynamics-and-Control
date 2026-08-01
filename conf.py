@@ -52,11 +52,14 @@ exclude_patterns = [
     "**.ipynb_checkpoints",
     "Thumbs.db",
     ".DS_Store",
-    # Work in progress, deliberately not part of the published site. Read the
-    # Docs never sees these because they are untracked, but a local build would
-    # otherwise pick them up and report them as orphan pages.
+    # Work in progress, deliberately not part of the published site.
     "under_construction",
     "under_construction/**",
+    # Repository front matter rather than course material, and nothing in the
+    # documentation links to it. TOC.ipynb and Function index.ipynb are also
+    # outside the toctree, but they link to each other, so those are marked
+    # orphan in their own metadata instead of being excluded here.
+    "README.md",
 ]
 
 html_theme = "sphinx_rtd_theme"
