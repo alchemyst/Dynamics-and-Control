@@ -3542,7 +3542,7 @@ default = [
     { name = "ipykernel", specifier = ">=6.29" },
     { name = "ipython", specifier = ">=8.27" },
     { name = "ipywidgets", specifier = ">=8.1" },
-    { name = "jupyterlab", specifier = ">=4.2,<5" },
+    { name = "jupyterlab", specifier = ">=4.6.2,<5" },
     { name = "matplotlib", specifier = ">=3.9,<4" },
     { name = "nbdime", specifier = ">=4.0.4" },
     { name = "numpy", specifier = ">=2,<3" },
