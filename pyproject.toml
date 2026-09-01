@@ -43,13 +43,13 @@ default = [
     "control>=0.10.2,<0.11",
     "ipykernel>=6.29",
     "ipython>=8.27",
-    "ipywidgets>=8.1",
-    "jupyterlab>=4.6.2,<5",
+    "ipywidgets>=8.1.9",
+    "jupyterlab>=4.6.3,<5",
     "matplotlib>=3.9,<4",
     "nbdime>=4.0.4",
     "numpy>=2,<3",
     "openpyxl>=3.1,<4",
-    "packaging>=24",
+    "packaging>=26.3",
     "pandas>=2.2,<3",
     "patsy>=1,<2",
     "scikit-learn>=1.6,<2",
@@ -65,7 +65,7 @@ test = [
 
 notebook-test = [
     "nbconvert>=7.16,<8",
-    "nbformat>=5.10,<6",
+    "nbformat>=5.11.1,<6",
     "pytest-xdist>=3.6,<4",
 ]
 
