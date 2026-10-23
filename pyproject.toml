@@ -64,7 +64,7 @@ test = [
 ]
 
 notebook-test = [
-    "nbconvert>=7.16,<8",
+    "nbconvert>=7.17.2,<8",
     "nbformat>=5.11.1,<6",
     "pytest-xdist>=3.6,<4",
 ]
