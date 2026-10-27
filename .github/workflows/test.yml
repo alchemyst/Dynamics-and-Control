@@ -36,11 +36,15 @@ jobs:
           python-version: ${{ matrix.python-version }}
           version: "0.11.29"
 
-      - name: Install the locked library test environment
-        run: uv sync --locked --no-default-groups --group test
+      # Resolve against each interpreter to test the published library's broad
+      # Python support independently of the Python 3.13+ repository lockfile.
+      - name: Install the library test environment
+        run: |
+          uv venv --python ${{ matrix.python-version }}
+          uv pip install . --group test
 
       - name: Run package tests
-        run: uv run --locked --no-default-groups --group test pytest tests
+        run: .venv/bin/python -m pytest tests
 
   notebooks:
     name: Notebooks / Python 3.13
