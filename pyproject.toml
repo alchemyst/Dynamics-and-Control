@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling>=1.32.0,<2"]
+requires = ["hatchling>=1.32.4,<2"]
 build-backend = "hatchling.build"
 
 [project]
@@ -93,6 +93,9 @@ packages = ["tbcontrol"]
 
 [tool.uv]
 default-groups = ["default"]
+# The repository environment targets current Python; the published library
+# retains the broader requires-python range above.
+environments = ["python_version >= '3.13'"]
 required-environments = [
     "sys_platform == 'darwin' and platform_machine == 'arm64'",
     "sys_platform == 'linux' and platform_machine == 'x86_64'",

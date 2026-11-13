@@ -30,17 +30,21 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Install uv and Python
-        uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
+        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
           enable-cache: true
           python-version: ${{ matrix.python-version }}
           version: "0.11.29"
 
-      - name: Install the locked library test environment
-        run: uv sync --locked --no-default-groups --group test
+      # Resolve against each interpreter to test the published library's broad
+      # Python support independently of the Python 3.13+ repository lockfile.
+      - name: Install the library test environment
+        run: |
+          uv venv --python ${{ matrix.python-version }}
+          uv pip install . --group test
 
       - name: Run package tests
-        run: uv run --locked --no-default-groups --group test pytest tests
+        run: .venv/bin/python -m pytest tests
 
   notebooks:
     name: Notebooks / Python 3.13
@@ -55,7 +59,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Install uv and Python
-        uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
+        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
           enable-cache: true
           python-version: "3.13"
