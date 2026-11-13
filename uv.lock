@@ -3063,7 +3063,7 @@ docs = [
     { name = "sphinx-rtd-theme", specifier = ">=3,<4" },
 ]
 notebook-test = [
-    { name = "nbconvert", specifier = ">=7.16,<8" },
+    { name = "nbconvert", specifier = ">=7.17.2,<8" },
     { name = "nbformat", specifier = ">=5.11.1,<6" },
     { name = "pytest-xdist", specifier = ">=3.6,<4" },
 ]
