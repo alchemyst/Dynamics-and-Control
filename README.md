@@ -9,9 +9,9 @@ videos related to the notebooks.
 
 ## Environment setup
 
-The supported notebook environment is managed by [uv](https://docs.astral.sh/uv/) and pinned to Python 3.13 through
-`.python-version`. The published `tbcontrol` library is intentionally less restrictive: it supports Python 3.10 and newer,
-has no upper bounds on its runtime dependencies, and is tested separately across Python 3.10–3.14.
+The supported notebook environment is managed by [uv](https://docs.astral.sh/uv/), locked for Python 3.13 and newer,
+and pinned to Python 3.13 through `.python-version`. The published `tbcontrol` library is intentionally less restrictive:
+it supports Python 3.10 and newer, has no upper bounds on its runtime dependencies, and is tested separately across Python 3.10–3.14.
 
 On macOS, install uv with Homebrew:
 
